@@ -1,13 +1,12 @@
 ---
-title: "Welcome to STA 210!"
-subtitle: "STA 210 - Spring 2022"
-author: "Dr. Mine Çetinkaya-Rundel"
-footer:  "[sta210-s22.github.io/website](https://sta210-s22.github.io/website/)"
-logo: "images/logo.png"
+title: "Biometrics I"
+subtitle: "STAT 240 - Fall 2025"
+author: "Robert Sholl"
+footer:  ""
+logo: "images/logo.jpg"
 format: 
   revealjs: 
     theme: slides.scss
-    multiplex: true
     transition: fade
     slide-number: true
 editor: visual
@@ -22,251 +21,626 @@ library(countdown)
 
 # Welcome
 
-## Meet the professor
+## About me
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
-![Dr. Mine Çetinkaya-Rundel (she/her)](images/lec-1/mine.png){fig-alt="Headshot of Dr. Mine Çetinkaya-Rundel" fig-align="center" width="200"}
+![](images/lec-1/robert2.png){fig-alt="Headshot of Robert Sholl" fig-align="center" width="300"}
+
+<div style="text-align: center;">
+  <strong>Robert Sholl</strong>
+</div>
+
 :::
 
 ::: {.column width="50%"}
--   Professor of the Practice & Director of Undergraduate Studies, Department of Statistical Science
--   Affiliated Faculty, Computational Media, Arts & Cultures
--   Find out more at [mine-cr.com](https://mine-cr.com)
+-   Graduate Teaching and Research Assistant, Department of Statistics
+-   Kansas Water Institute Research Fellow
+-   Find out more at [my academic website](https://rmshksu.github.io)
 :::
-:::
+:::::
 
-## Meet the TAs
+## Meet the TA
 
--   Martha Aboagye (she/her, UG)
--   Rich Fremgen (he/him, MS)
--   Emily Gentles (she/her, MS)
--   Sara Mehta (she/her, UG)
--   Rick Presman (he/him, PhD)
--   Shari Tian (she/her, UG)
--   Aaditya Warrier (he/him, UG)
+::::: columns
+::: {.column width="50%"}
+![](images/lec-1/phoebe.png){fig-alt="Headshot of Phoebe B. McKay" fig-align="center" width="300"}
 
-## Check out Conversations
+<div style="text-align: center;">
+  <strong>Phoebe B. McKay</strong>
+</div>
 
--   Go to [Conversations 💬](https://sakai.duke.edu/portal/site/779c3ebe-3b88-4bcc-bd01-1813e8396a23/tool/13b6446a-a6c6-4222-8cfb-c36d1f70802b)
--   Answer the discussion question: How are you doing?
-
-# Regression analysis
-
-## What is regression analysis
-
-::: {style="font-size: 0.8em;"}
-> "In statistical modeling, regression analysis is a set of statistical processes for estimating the relationships among variables. It includes many techniques for modeling and analyzing several variables, when **the focus is on the relationship between a dependent variable and one or more independent variables (or predictors)**. More specifically, regression analysis helps one understand how the typical value of the dependent variable (or 'criterion variable') changes when any one of the independent variables is varied, while the other independent variables are held fixed."
 :::
 
-Source: [Wikipedia](https://en.wikipedia.org/wiki/Regression_analysis)
+::: {.column width="50%"}
+-   Distinguished Feline
+-   Hobbyist spider hunter
+-   Aspiring model
+-   Wild cat
+:::
+:::::
 
-## Course FAQ
+## About you
+
+```{r,echo=FALSE}
+students=read.csv("data/students_240_f25.csv")
+majors=as.data.frame(table(students$degreeProgram))
+levels=as.data.frame(table(students$classLevel))
+levels=data.frame(Var1=c("Freshmen","Sophomore","Junior","Senior"),
+                  Freq=c(9,11,16,8))
+par(mar = c(5, 10, 4, 2))
+barplot(majors$Freq,
+        names.arg = majors$Var1,
+        horiz = TRUE,
+        las = 1,
+        xlim=c(0,12),
+        cex.names = 0.8,
+        col = "#51288899",
+        main = "Degree Programs",
+        xlab = "Count")
+```
+
+## About you
+
+```{r,echo=FALSE}
+par(mar = c(3, 4, 3, 1))
+barplot(levels$Freq,
+        names.arg = levels$Var1,
+        las = 1,
+        cex.names = 0.8,
+        col = "#51288899",
+        main = "Class Levels",
+        ylab = "Count",
+        ylim=c(0,20))
+```
+
+# Admin Stuff
+
+## What is this course?
 
 ::: incremental
--   **What background is assumed for the course?** Introductory statistics or probability course.
--   **Will we be doing computing?** Yes. We will use R.
--   **Will we learn the mathematical theory of regression?** Yes and No. The course is primarily focused on application; however, we will discuss some of the mathematics of simple linear regression. The 1-credit course [STA 211: Mathematics of Regression](https://stat.duke.edu/courses/mathematics-regression) you can take simultaneously / after dives into more of the mathematics.
+-   Introductory stats for the biological sciences
+-   (Ideally) comprehensive enough to be your last stats class
+-   Broad enough to help you continue learning stats after
+-   There will be math, arithmetic doesn't matter
+-   There's some programming, none of it is required
+:::
+
+## Basic logistics
+
+::: incremental
+-   Class hours: M/W/F 11:30 AM - 12:20 PM
+    -   Come late or leave early, just be respectful
+    -   Attendance isn't required
+-   Office hours: M/W 10:20 AM - 11:20 AM
+    -   Use them
+-   Stat Help Lab: M-F 9 AM - 5 PM 
+    -   Starts second week of the semester
+    -   My hours are Friday 9 AM - 11 AM
+:::
+
+## FAQs
+
+::: incremental
+- **Are there any pre-requisites?**
+  - No, but high school algebra and biology would be helpful
+- **Will we use computer programs like Excel or Python?**
+  - I'll use R, you're welcome to try it, but the class is taught using "paper and pencil" mathematics
+- **Is there a required textbook?**
+  - "Yes", but it's free. You can find it in Canvas or the course website
+:::
+
+
+# Course Overview
+
+## Exams
+
+::: incremental
+- 3 exams, all of them are "comprehensive"
+- In-class, 50 minutes
+  - Calculator + pencil
+  - Cheat sheet (front and back)
+- All exam and due dates are subject to change
+- Exams will cover the material we've learned in class
+  - If I don't get to it I won't test on it
+:::
+
+## Unit Question Banks
+
+::: incremental
+- 1 bank for each unit, 50 problems per bank
+  - Choose 10 and write down your answers 
+  - Work is not required
+- Pass/fail — no partial credit
+  - Turn in worked solutions after any class or during office hours. I'll provide feedback with no penalty.
+:::
+
+## Unit Question Banks
+
+::: incremental
+- Each correct answer is 1% of your grade, 30% total
+- You can complete the remaining 40 per unit for 0.5 points on your exam per question
+  - You must show **all work** to get credit
+  - The extra credit you can get from this is up to 12% of your total grade
+- 10 problem answers are due the Friday before the exam
+- The remaining 40 problems are due the week of the exam 
+:::
+
+## Final Report
+
+::: {.incremental .spaced}
+- 10% of your grade, due 3 weeks before finals
+- Meant to be a chance to get a "real life" experience with stats
+- 3 options for the report, choose 1
+
+  ::: callout-important
+  If you're doing undergraduate research or have a different proposal — talk to me, we can see if that is a viable replacement.
+  :::
+
+:::
+
+
+
+## Attend a talk (or conference)
+
+::: {.small}
+
+Attend a scientific talk (on or off campus) then write a paper with the following:
+
+2-3 sentences summarizing the talk.
+
+2-3 sentences about how you felt about the talk and the speaker.
+
+1-2 sentences describing anything you learned.
+
+1-2 sentences describing anything you didn’t understand or were unsure about.
+
+2-3 sentences either (a) describing any statistical methods that were used/mentioned or (b) describing any statistical methods that could be applicable to the topic discussed.
+
+:::
+
+## Interview a pro
+
+Talk to someone who does research or uses statistics regularly as part of their job. They can be an academic, industry, or government professional. Ask them about their education in statistics, how they use statistics, and how they view statistics in relation to their profession. Summarize the discussion, anything you learned from it, and anything you recognized from this course during the discussion in 4-8 sentences at most.
+
+## Perform an analysis
+
+Using R programming, complete an analysis of either (a) pre-selected data provided in Canvas or (b) outside data you selected that has been approved by the instructor. The analysis should include:
+
+- All basic summary statistics discussed during the course.
+
+- At least two graphics from class.
+
+- A linear model or hypothesis test
+
+::: {.small}
+
+Provide all your source code, with every line of code commented, and a brief statement about what can be concluded from the analysis.
+
 :::
 
 ## Course learning objectives
 
--   Analyze real-world data to answer questions about multivariable relationships.
--   Fit and evaluate linear and logistic regression models.
--   Assess whether a proposed model is appropriate and describe its limitations.
--   Use [Quarto](https://quarto.org/) to write reproducible reports and GitHub for version control and collaboration.
--   Communicate results from statistical analyses to a general audience.
+::: {.small}
 
-## Examples of regression in practice
+By the end of this course, students will have a basic grasp of:
+
+:::
+
+- Graphical tools for data analysis
+
+- Sampling methods for observational studies
+
+- The design of experiments
+
+- Probability and distribution theory
+
+- Simple linear regression
+
+- Uncertainty quantification
+
+- t-tests for statistical hypotheses
+
+## How to Succeed
 
 ::: incremental
--   [New Yorkers Will Pay \$56 A Month To Trim A Minute Off Their Commute](https://fivethirtyeight.com/features/new-yorkers-will-pay-56-a-month-to-trim-a-minute-off-their-commute/)
--   [How FiveThirtyEight's 2020 Presidential Forecast Works --- And What's Different Because Of COVID-19](https://fivethirtyeight.com/features/how-fivethirtyeights-2020-presidential-forecast-works-and-whats-different-because-of-covid-19/)
--   [Effect of Forensic Evidence on Criminal Justice Case Processing](https://onlinelibrary.wiley.com/doi/10.1111/1556-4029.12020)
--   [Why it's so freaking hard to make a good COVID-19 model](https://fivethirtyeight.com/features/why-its-so-freaking-hard-to-make-a-good-covid-19-model/)
+- My philosophy on grades
+
+- You have to set the pace
+
+- Do the readings before class
+
+- Come to class with questions
+
+- Follow along when I work on exercises/problems
+
+- Do every question in the 3 unit question banks
+
+- Start thinking about your final report now
+
+  - Start doing it in 4 weeks
+  
 :::
 
-# Course overview
+## Grading 
 
-## Homepage
-
-[sta210-s22.github.io/website](https://sta210-s22.github.io/website/)
-
--   All course materials
--   Links to Sakai, GitHub, RStudio containers, etc.
--   Let's take a tour!
-
-## Course toolkit
-
-All linked from the course website:
-
--   GitHub organization: [github.com/sta210-s22](https://github.com/sta210-s22)
--   RStudio containers: [cmgr.oit.duke.edu/containers](https://cmgr.oit.duke.edu/containers)
--   Discussion forum: [Conversations](https://sakai.duke.edu/portal/site/779c3ebe-3b88-4bcc-bd01-1813e8396a23/tool/13b6446a-a6c6-4222-8cfb-c36d1f70802b)
--   Assignment submission and feedback: [Gradescope](https://sakai.duke.edu/portal/site/779c3ebe-3b88-4bcc-bd01-1813e8396a23/page/aec742dc-2972-4f02-a35b-1dd3315af889)
-
-::: callout-important
-Reserve an RStudio Container (titled STA 210) before lab on Monday!
-:::
-
-## Activities: Prepare, Participate, Practice, Perform {.smaller}
-
--   **Prepare:** Introduce new content and prepare for lectures by completing the readings (and sometimes watching the videos)
--   **Participate:** Attend and actively participate in lectures and labs, office hours, team meetings
--   **Practice:** Practice applying statistical concepts and computing with application exercises during lecture, graded for completion
--   **Perform:** Put together what you've learned to analyze real-world data
-    -   Lab assignments x 7 (first individual, later team-based)
-    -   Homework assignments x 5 (individual)
-    -   Three take-home exams
-    -   Term project presented during the final exam period
-
-## Cadence
-
-::: incremental
--   **Labs:** Start and make large progress on Monday in lab section, finish up by Friday 5pm of that week
--   **HWs:** Posted Friday morning, due following Friday 5pm
--   **Exams:** Exam review Thursday in class, exam posted Friday morning, no lab on Monday of following week, due Monday 11:59pm
--   **Project:** Deadlines throughout the semester, with some lab and lecture time dedicated to working on them, and most work done in teams outside of class
-:::
-
-## Teams
-
--   Team assignments
-    -   Assigned by me
-    -   Application exercises, labs, and project
-    -   Peer evaluation during teamwork and after completion
--   Expectations and roles
-    -   Everyone is expected to contribute equal *effort*
-    -   Everyone is expected to understand *all* code turned in
-    -   Individual contribution evaluated by peer evaluation, commits, etc.
-
-## Grading {.smaller}
-
-| Category              | Percentage   |
+| Item                  | Percentage   |
 |-----------------------|--------------|
-| Application exercises | 3%           |
-| Homework              | 35% (7% x 5) |
-| Project               | 15%          |
-| Lab                   | 14% (2% x 7) |
-| Exam 01               | 10%          |
-| Exam 02               | 10%          |
-| Exam 03               | 10%          |
-| Teamwork              | 3%           |
+| Unit 1 Problems       | 10%          |
+| Unit 2 Problems       | 10%          |
+| Unit 3 Problems       | 10%          |
+| Final Report          | 10%          |
+| Exam  1               | 20%          |
+| Exam  2               | 20%          |
+| Exam  3               | 20%          |
+| Total                 | 100%         |
 
-See [course syllabus](https://sta210-s22.github.io/website/course-syllabus.html) for how the final letter grade will be determined.
+## Communication
 
-## Support
+>During business hours I will response to emails or Canvas messages within 2 business days at most, this includes messages sent outside of business hours. Response times will vary throughout the semester. If I have not responded within 2 business days feel free to contact me again or approach me directly after class/during office hours. 
 
--   Attend office hours
--   Ask and answer questions on the discussion forum
--   Reserve email for questions on personal matters and/or grades
--   Read the [course support](https://sta210-s22.github.io/website/course-support.html) page
+>Full class communications will occur via Canvas and in-class announcements.
 
-## Announcements
 
--   Posted on Sakai (Announcements tool) and sent via email, be sure to check both regularly
--   I'll assume that you've read an announcement by the next "business" day
--   I'll (try my best to) send a weekly update announcement each Friday, outlining the plan for the following week and reminding you what you need to do to prepare, practice, and perform
-
-## Diversity + inclusion {.smaller}
-
-It is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students' learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength and benefit.
+## AI and Academic Dishonesty
 
 ::: incremental
--   If you have a name that differs from those that appear in your official Duke records, please let me know!
--   Please let me know your preferred pronouns. You'll also be able to note this in the Getting to know you survey.
--   If you feel like your performance in the class is being impacted by your experiences outside of class, please don't hesitate to come and talk with me. I want to be a resource for you. If you prefer to speak with someone outside of the course, your advisers and deans are excellent resources.
--   I (like many people) am still in the process of learning about diverse perspectives and identities. If something was said in class (by anyone) that made you feel uncomfortable, please talk to me about it.
+- Cheating is an economic issue, talk to me and we can work on a solution
+  - If you cheat I will take it out on you (give you an incomplete and make you run it back)
+- The syllabus outlines my AI policy in detail
+- Don't use AI to replace knowledge work
+  - If you don't know whether or not you're doing that **talk to me**
+  
 :::
-
-## Accessibility
-
--   The [Student Disability Access Office (SDAO)](https://access.duke.edu/students) is available to ensure that students are able to engage with their courses and related assignments.
-
--   I am committed to making all course materials accessible and I'm always learning how to do this better.
-    If any course component is not accessible to you in any way, please don't hesitate to let me know.
-
-# Course policies
-
-## COVID policies
-
--   Wear a mask at all times!
-
--   Read and follow university guidance
-
-## Late work, waivers, regrades policy
-
--   We have policies!
--   Read about them on the [course syllabus](https://sta210-s22.github.io/website/course-syllabus.html) and refer back to them when you need it
-
-## Collaboration policy
-
--   Only work that is clearly assigned as team work should be completed collaboratively.
-
--   Homeworks must be completed individually.
-    You may **not** directly share answers / code with others, however you are welcome to discuss the problems in general and ask for advice.
-
--   Exams must be completed individually.
-    You may **not** discuss any aspect of the exam with peers.
-    If you have questions, post as private questions on the course forum, only the teaching team will see and answer.
-
-## Sharing / reusing code policy
-
--   We are aware that a huge volume of code is available on the web, and many tasks may have solutions posted
-
--   Unless explicitly stated otherwise, this course's policy is that you may make use of any online resources (e.g. RStudio Community, StackOverflow, etc.) but you must explicitly cite where you obtained any code you directly use or use as inspiration in your solution(s).
-
--   Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism, regardless of source
-
-## Academic integrity
-
-> To uphold the Duke Community Standard:
->
-> -   I will not lie, cheat, or steal in my academic endeavors;
->
-> -   I will conduct myself honorably in all my endeavors; and
->
-> -   I will act if the Standard is compromised.
-
-## Most importantly!
-
-Ask if you're not sure if something violates a policy!
-
-# Making STA 210 a success
-
-## Five tips for success
-
-1.  Complete all the preparation work before class.
-2.  Ask questions.
-3.  Do the readings.
-4.  Do the homework and lab.
-5.  Don't procrastinate and don't let a week pass by with lingering questions.
-
-## Learning during a pandemic
-
-I want to make sure that you learn everything you were hoping to learn from this class.
-If this requires flexibility, please don't hesitate to ask.
+  
+## AI and Academic Dishonesty
 
 ::: incremental
--   You never owe me personal information about your health (mental or physical) but you're always welcome to talk to me. If I can't help, I likely know someone who can.
--   I want you to learn lots of things from this class, but I primarily want you to stay healthy, balanced, and grounded during this crisis.
+
+- This is your one of your last chances to learn as a profession
+  - Trust me, it's not the same when you're out in the real world
+- I can't stop you, and if I don't catch you good job
+- **Just don't cheat.**
+
 :::
 
-## This week's tasks
+# Why Statistics?
 
--   Get a GitHub account if you don't have one (some advice for choosing a username [here](https://happygitwithr.com/github-acct.html#username-advice "Happy Git with R"))
--   Complete the Getting to know you survey if you haven't yet done so!
--   Read the syllabus
--   Watch out for next week's announcement email, in your inbox sometime tomorrow
+## Sampling from Populations
 
-## Midori says...
+```{r,echo=FALSE,fig.align='center'}
+hobbies_M=data.frame(Hobbies=c("Reading","Foreign Languages","Playing Instruments",
+                     "Cooking","Woodworking","Painting","Writing",
+                     "Gardening","Swimming","Photography","Astronomy","Hiking",
+                     "Archery","Blacksmithing","Traveling"),
+                     Perc=c(98.2,95.6,95.4,95.1,94.4,94.1,93.8,93.8,
+                            92.8,90.5,90.5,90.0,89.5,88.2,87.9))
+hobbies_L=data.frame(Hobbies=c("Comic Books","Cosplay","Debating","Drinking","MTG","Anime",
+                               "Makeup","Crypto","Cigars","Clubbing","Marijuana","Funko",
+                               "Arguing Online","Porn","Gambling","Manosphere"),
+                     Perc=c(33.6,32.1,30.5,29.0,28.5,27.4,24.4,23.1,
+                            22.3,20.0,15.9,12.3,12.3,10.8,6.4,3.1))
 
-[![](images/lec-1/midori.jpeg){fig-alt="Picture of my cat, Midori, with a speech bubble that says \"Read the syllabus and make Mine happy!\"" fig-align="center" width="700"}](https://sta210-s22.github.io/website/course-syllabus.html)
+par(mar = c(5, 8, 4, 2))
+mp1=barplot(hobbies_M$Perc,
+        names.arg = hobbies_M$Hobbies,
+        horiz = TRUE,
+        las = 1,
+        cex.names = 0.8,
+        col = "steelblue",
+        xlim = c(0, 112),
+        main = "Most Attractice Male Hobbies",
+        xlab = "Percentage labeled 'Attractive'")
 
-# Application exercise
+text(x = hobbies_M$Perc + 2,
+     y = mp1,
+     labels = paste0(hobbies_M$Perc, "%"),
+     cex = 0.8, pos = 4)
+```
 
-::: appex
-Or more like demo for today...
+## Sampling from Populations
 
-📋 [github.com/sta210-s22/ae-0-movies](https://github.com/sta210-s22/ae-0-movies)
+```{r,echo=FALSE,fig.align='center'}
+par(mar = c(5, 8, 4, 2))
+mp2=barplot(hobbies_L$Perc,
+        names.arg = hobbies_L$Hobbies,
+        horiz = TRUE,
+        las = 1,
+        cex.names = 0.8,
+        col = "tomato",
+        xlim = c(0, 100),
+        main = "Least Attractive Male Hobbies",
+        xlab = "Percentage labeled 'Attractive'")
+
+text(x = hobbies_L$Perc + 2,
+     y = mp2,
+     labels = paste0(hobbies_L$Perc, "%"),
+     cex = 0.8, pos = 4)
+```
+
+## Sampling from Populations
+
+
+- This sample arises from "Date Psychology", which is two people named Alexander and Caitlin
+  
+>"Alexander holds a MSc in Cognitive and Behavioral Neuroscience and a BA in Psychology, summa cum laude. Caitlin holds a BA in Psychology, cum laude. Together they share interests in human behavior, cognitive psychology, neuroscience, and romantic relationships."
+
+
+## Sampling from Populations
+
+::: incremental
+
+- Study design was a "forced choice" survey of $74$ hobbies
+
+  - Women were asked if the hobby was attractive or not
+  
+  - Men were asked if they thought the hobby was attractive to women or not
+
+- Self reported study limitations
+
+  - Convenience sample, $814$ participants, $48\%$ women
+  
+  - $45\%$ of of women held a Master's or higher
+  
+  - $>90\%$ white respondents
+  
+  - '...we don't expect much political ideological bias.'
+
 :::
+
+## Prediction
+
+::: {.small}
+>On July $30^{th}$ this year the sixth largest recorded earthquake hit the east coast of Russia and triggered a tsunami that caused $>2$ million people to be evacuated from Pacific coastlines worldwide. There was $1$ recorded death due to these events.
+
+:::
+
+::: incremental
+
+- Under-studied field, there's data on earthquakes and tsunamis but not a lot for extreme events
+
+- High magnitude earthquakes tend to result in tsunamis
+
+  - Tsunamis are bad
+  
+- *Can we predict the wave height?*
+
+:::
+
+## Prediction
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+tsunami=read.table('data/tsunami.tsv',T,'\t')
+tsunami=tsunami[-1,]
+tsunami=tsunami[,-1]
+tsunami=data.frame(year=tsunami$Year,
+                   month=tsunami$Mo,
+                   country=tsunami$Country,
+                   lat=tsunami$Latitude,
+                   long=tsunami$Longitude,
+                   valid=tsunami$Tsunami.Event.Validity,
+                   cause=tsunami$Tsunami.Cause.Code,
+                   magnitude=tsunami$Earthquake.Magnitude,
+                   wave_height=tsunami$Maximum.Water.Height..m.)
+tsunami=subset(tsunami,tsunami$valid>2 & tsunami$cause==1)
+tsunami=na.omit(tsunami)
+```
+
+```{r,echo=FALSE,fig.align='center'}
+plot(tsunami$magnitude,tsunami$wave_height,xlab="Earthquake Magnitude",ylab="Wave Height (Meters)",main="Tsunamis correlated with Earthquakes (1970-present)")
+abline(h=seq(0,50,10),col="#D1D1D1")
+abline(v=seq(4,9,1),col="#D1D1D1")
+points(tsunami$magnitude,tsunami$wave_height,pch=20,cex=1.2,col="#00000090")
+```
+
+## Prediction
+
+```{r,echo=FALSE,fig.align='center'}
+plot(tsunami$magnitude,tsunami$wave_height,xlab="Earthquake Magnitude",ylab="Wave Height (Meters)",main="Tsunamis correlated with Earthquakes (1970-present)")
+abline(h=seq(0,50,10),col="#D1D1D1")
+abline(v=seq(4,9,1),col="#D1D1D1")
+points(tsunami$magnitude,tsunami$wave_height,pch=20,cex=1.2,col="#00000020")
+abline(h=mean(tsunami$wave_height),col="#f39e38",lty=2,lwd=3)
+text(5.5,6,"1.655",col="#f39e38",cex=1.3)
+```
+
+## Prediction
+
+```{r,echo=FALSE,fig.align='center'}
+extreme=subset(tsunami,tsunami$magnitude>8)
+plot(extreme$magnitude,extreme$wave_height,xlab="Earthquake Magnitude",ylab="Wave Height (Meters)",main="Extreme Earthquake Events")
+abline(h=seq(0,50,10),col="#D1D1D1")
+abline(v=seq(8.2,9,0.2),col="#D1D1D1")
+points(tsunami$magnitude,tsunami$wave_height,pch=20,cex=1.2,col="#00000090")
+```
+
+## Prediction
+
+```{r,echo=FALSE,fig.align='center'}
+extreme=subset(tsunami,tsunami$magnitude>8)
+plot(extreme$magnitude,extreme$wave_height,xlab="Earthquake Magnitude",ylab="Wave Height (Meters)",main="Extreme Earthquake Events")
+abline(h=seq(0,50,10),col="#D1D1D1")
+abline(v=seq(8.2,9,0.2),col="#D1D1D1")
+points(tsunami$magnitude,tsunami$wave_height,pch=20,cex=1.2,col="#00000090")
+abline(h=mean(extreme$wave_height),col="#f39e38",lty=2,lwd=3)
+text(8.5,15,"9.74",col="#f39e38",cex=1.5)
+```
+
+## Prediction
+
+```{r,echo=FALSE,fig.align='center'}
+m=lm(wave_height~magnitude,extreme)
+extreme=subset(tsunami,tsunami$magnitude>8)
+plot(extreme$magnitude,extreme$wave_height,xlab="Earthquake Magnitude",ylab="Wave Height (Meters)",main="Extreme Earthquake Events")
+abline(h=seq(0,50,10),col="#D1D1D1")
+abline(v=seq(8.2,9,0.2),col="#D1D1D1")
+points(tsunami$magnitude,tsunami$wave_height,pch=20,cex=1.2,col="#00000090")
+abline(coef(m)[1],coef(m)[2],col="#E51F50",lwd=2)
+points(8.8,26.65,col="#24394C",cex=1.4,pch=15)
+text(8.86,23,"26.65",col="#24394C",cex=1.3)
+```
+
+## Prediction
+
+```{r,echo=FALSE,fig.align='center'}
+m=lm(wave_height~magnitude,tsunami)
+plot(tsunami$magnitude,tsunami$wave_height,xlab="Earthquake Magnitude",ylab="Wave Height (Meters)",main="Tsunamis correlated with Earthquakes (1970-present)")
+abline(h=seq(0,50,10),col="#D1D1D1")
+abline(v=seq(4,9,1),col="#D1D1D1")
+points(tsunami$magnitude,tsunami$wave_height,pch=20,cex=1.2,col="#00000010")
+abline(coef(m)[1],coef(m)[2],col="#E51F50",lwd=2)
+points(8.8,coef(m)[1]+coef(m)[2]*8.8,col="#24394C",cex=2,pch=15)
+text(8.7,13,"6.18",col="#24394C",cex=1.5)
+```
+
+## Prediction
+
+```{r,echo=FALSE,fig.align='center',message=FALSE}
+m=lm(wave_height~poly(magnitude,7),data=tsunami)
+plot(tsunami$magnitude,tsunami$wave_height,xlab="Earthquake Magnitude",ylab="Wave Height (Meters)",main="Tsunamis correlated with Earthquakes (1970-present)")
+abline(h=seq(0,50,10),col="#D1D1D1")
+abline(v=seq(4,9,1),col="#D1D1D1")
+points(tsunami$magnitude,tsunami$wave_height,pch=20,cex=1.2,col="#00000010")
+points(sort(tsunami$magnitude),sort(m$fitted.values),type="l",lwd=2,col="#E51F50")
+points(8.8,20,col="#24394C",cex=1.6,pch=15)
+text(8.65,24,"20",col="#24394C",cex=1.5)
+```
+
+## Prediction
+
+```{r,include=FALSE}
+library(gbm)
+set.seed(73)
+m=gbm(wave_height~magnitude,data=tsunami,n.trees=100000,shrinkage=0.001,bag.fraction=0.35)
+```
+
+```{r,echo=FALSE,fig.align='center',message=FALSE}
+plot(tsunami$magnitude,tsunami$wave_height,xlab="Earthquake Magnitude",ylab="Wave Height (Meters)",main="Tsunamis correlated with Earthquakes (1970-present)")
+abline(h=seq(0,50,10),col="#D1D1D1")
+abline(v=seq(4,9,1),col="#D1D1D1")
+points(tsunami$magnitude,tsunami$wave_height,pch=20,cex=1.2,col="#00000010")
+points(sort(tsunami$magnitude),sort(m$fit),type="l",lwd=2,col="#E51F50")
+points(8.8,12,col="#24394C",cex=1.6,pch=15)
+text(8.7,16.5,"12",col="#24394C",cex=1.5)
+```
+
+## Probability
+
+::: {.small}
+
+>Norovirus is the leading cause of gastroenteritis worldwide. It has a terrifying rate of transmission and outbreaks often occur during densely packed social events/gatherings. Anywhere theres frequent direct contact between large groups of people in an enclosed environment, there's norovirus. 
+
+:::
+
+::: incremental
+
+- The perfect environment for norovirus outbreaks?
+
+  - Cruise ships
+  
+  - The CDC tracks cruise ship norovirus cases separately as part of the Vessel Sanitation Program (VSP)
+  
+- *What are the chances you get sick if you get on a cruise ship?*
+
+:::
+
+## Probability
+
+```{r,echo=FALSE,fig.align='center',message=FALSE}
+cruise=read.csv("data/cruisedata.csv")
+pop=cruise$total_population
+infect=cruise$infected
+par(mar=c(4,4,3.5,2))
+plot(cruise$total_population,cruise$infected,xlab="Total Passengers",ylab="Positive Cases",
+     main="Cruise Ship Norovirus Outbreaks",type="n",xlim=c(250,8500),ylim=c(5,700))
+abline(h=0,col="#D1D1D1")
+abline(h=100,col="#D1D1D1")
+abline(h=200,col="#D1D1D1")
+abline(h=300,col="#D1D1D1")
+abline(h=400,col="#D1D1D1")
+abline(h=500,col="#D1D1D1")
+abline(h=600,col="#D1D1D1")
+abline(h=700,col="#D1D1D1")
+abline(v=1000,col="#D1D1D1")
+abline(v=2000,col="#D1D1D1")
+abline(v=3000,col="#D1D1D1")
+abline(v=4000,col="#D1D1D1")
+abline(v=5000,col="#D1D1D1")
+abline(v=6000,col="#D1D1D1")
+abline(v=7000,col="#D1D1D1")
+abline(v=8000,col="#D1D1D1")
+points(cruise$total_population,cruise$infected,pch=20,col="#00000090",cex=1.5)
+```
+
+## Probability
+
+```{r,echo=FALSE,fig.align='center',message=FALSE}
+cruise=read.csv("data/cruisedata.csv")
+pop=cruise$total_population
+infect=cruise$infected
+par(mar=c(4,4,3.5,2))
+plot(cruise$total_population,cruise$infected_proportion,xlab="Total Passengers",
+     ylab="Positive Cases",main="Cruise Ship Norovirus Outbreaks",
+     type="n",xlim=c(250,8500),ylim=c(0.01,0.24))
+abline(h=seq(0.05,0.20,0.05),col="#D1D1D1")
+abline(v=seq(1000,8000,1000),col="#D1D1D1")
+points(cruise$total_population,cruise$infected_proportion,pch=20,col="#00000090",cex=1.5)
+```
+
+## Probability
+
+```{r,echo=FALSE,fig.align='center',message=FALSE}
+hist(cruise$infected_proportion,xlab="Proportion",
+     main="Proportion of Positive Cases",breaks=20,col="#DDC4EE90",xlim=c(0,0.2))
+```
+
+## Probability
+
+```{r,echo=FALSE,fig.align='center',message=FALSE}
+hist(cruise$infected_proportion,xlab="Proportion",
+     main="Proportion of Positive Cases",breaks=20,
+     col="#DDC4EE99",xlim=c(0,0.2))
+abline(v=median(cruise$infected_proportion),col="#3B4160",lwd=4,lty=2)
+text(0.025,17,"0.04",col="#3B4160",cex=1.5)
+```
+
+## Probability
+
+```{r,echo=FALSE,fig.align='center',message=FALSE}
+cruise=read.csv("data/cruisedata.csv")
+pop=cruise$total_population
+infect=cruise$infected
+bad=cruise[cruise$liner %in% names(which(table(cruise$liner) > 5)), ]
+par(mar = c(5, 12, 1, 1))
+boxplot(bad$infected_proportion ~ bad$liner, ,
+        horizontal = TRUE,
+        col = "white",
+        xlab = "Proportion Infected",
+        ylab = "",
+        main = "",
+        las = 1)
+abline(v=0.04,col="#3B4160",lwd=3,lty=2)
+```
+
+
+## Uncertainty
+
+>Like any good math class, we need to check our work.
+
+::: incremental
+
+- Are any of these conclusion right?
+
+- What can we define as right?
+  
+- If they're right, how certain are we?
+
+- If they're wrong, how wrong are they?
+
+  - How certain of *that* are we?
+  
+- What do we do in either case?
+  
+:::
+
+# Go away

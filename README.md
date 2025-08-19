@@ -1,13 +1,13 @@
-# Website for STA 210 at Duke University (Spring 2022)
-
-🔗 https://sta210-s22.github.io/website/
+# Website for STAT 240 at Kansas State University (Fall 2025)
 
 ## Colors
 
 - website background: #D9E3E4
-- headings: #5B888C
+- headings: #512888
 
 ## Attribution
+
+This course website layout is based on STA 210 - Spring 2022 by Dr. Mine Çetinkaya-Rundel
 
 Much of the content is based on [STA 210 - Fall 2021](https://github.com/sta210-fa21/) by Dr. Maria Tackett.
 

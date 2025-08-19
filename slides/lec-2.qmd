@@ -1,13 +1,12 @@
 ---
-title: "Simple Linear Regression"
-subtitle: "STA 210 - Spring 2022"
-author: "Dr. Mine Çetinkaya-Rundel"
-footer:  "[sta210-s22.github.io/website](https://sta210-s22.github.io/website/)"
-logo: "images/logo.png"
+title: "Statistics as a Language"
+subtitle: "STAT 240 - Fall 2025"
+author: "Robert Sholl"
+footer:  ""
+logo: "images/logo.jpg"
 format: 
   revealjs: 
     theme: slides.scss
-    multiplex: true
     transition: fade
     slide-number: true
 editor: visual
@@ -15,415 +14,620 @@ execute:
   freeze: auto
 ---
 
-```{r setup}
-#| include: false
-library(countdown)
-knitr::opts_chunk$set(
-  fig.width = 6,
-  fig.asp = 0.618,
-  fig.align = "center",
-  out.width = "90%"
-)
+# Statistics as a Science
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+tsunami=read.table('data/tsunami.tsv',T,'\t')
+tsunami=tsunami[-1,]
+tsunami=tsunami[,-1]
+raw_tsunami=tsunami
+tsunami=data.frame(year=tsunami$Year,
+                   month=tsunami$Mo,
+                   country=tsunami$Country,
+                   lat=tsunami$Latitude,
+                   long=tsunami$Longitude,
+                   valid=tsunami$Tsunami.Event.Validity,
+                   cause=tsunami$Tsunami.Cause.Code,
+                   magnitude=tsunami$Earthquake.Magnitude,
+                   wave_height=tsunami$Maximum.Water.Height..m.)
+og_tsunami=na.omit(tsunami)
+tsunami=subset(tsunami,tsunami$valid>2 & tsunami$cause==1)
+tsunami=na.omit(tsunami)
+extreme=subset(tsunami,tsunami$magnitude>8)
 ```
 
-# Welcome
-
-## Announcements
-
--   If you're just joining the class, welcome! Go to the [course website](https://sta210-s22.github.io/website) and review content you've missed, read the syllabus, and complete the *Getting to know you* survey.
--   Lab 1 is due Friday, at 5pm, on Gradescope.
-
-## Dorianne Gray says...
-
-[![](images/lec-2/dorianne-gray.jpeg){fig-alt="Picture of my cat Dorianne Gray (a gray, furry tabby) with a speech bubble that says \"Read the syllabus and make Mine happy!\"" width="800"}](https://sta210-s22.github.io/website/course-syllabus.html)
-
-## Outline
-
--   Use simple linear regression to describe the relationship between a quantitative predictor and quantitative outcome variable
--   Estimate the slope and intercept of the regression line using the least squares method
--   Interpret the slope and intercept of the regression line
-
-## Computational setup
-
-```{r packages}
-#| echo: true
-#| message: false
-
-# load packages
-library(tidyverse)       # for data wrangling
-library(tidymodels)      # for modeling
-library(fivethirtyeight) # for the fandango dataset
-
-# set default theme and larger font size for ggplot2
-ggplot2::theme_set(ggplot2::theme_minimal(base_size = 16))
-
-# set default figure parameters for knitr
-knitr::opts_chunk$set(
-  fig.width = 8,
-  fig.asp = 0.618,
-  fig.retina = 3,
-  dpi = 300,
-  out.width = "80%"
-)
-```
-
-# Data
-
-## Movie ratings
-
-::: columns
-::: {.column width="70%"}
--   Data behind the FiveThirtyEight story [*Be Suspicious Of Online Movie Ratings, Especially Fandango's*](%22Be%20Suspicious%20Of%20Online%20Movie%20Ratings,%20Especially%20Fandango's%22)
--   In the **fivethirtyeight** package: [`fandango`](https://fivethirtyeight-r.netlify.app/reference/fandango.html)
--   Contains every film that has at least 30 fan reviews on Fandango, an IMDb score, Rotten Tomatoes critic and user ratings, and Metacritic critic and user scores
-:::
-
-::: {.column width="30%"}
-![](images/lec-2/fandango.png){fig-alt="Fandango logo" width="200"}
-
-![](images/lec-2/imdb.png){fig-alt="IMDB logo" width="200"}
-
-![](images/lec-2/rotten-tomatoes.png){fig-alt="Rotten Tomatoes logo" width="200"}
-
-![](images/lec-2/metacritic.png){fig-alt="Metacritic logo" width="200"}
-:::
-:::
-
-## Data prep
-
--   Rename Rotten Tomatoes columns as `critics` and `audience`
--   Rename the dataset as `movie_scores`
-
-```{r data-prep}
-#| echo: true
-movie_scores <- fandango %>%
-  rename(
-    critics = rottentomatoes, 
-    audience = rottentomatoes_user
-  )
-```
-
-## Data overview
-
-```{r data-overview}
-#| echo: true
-glimpse(movie_scores)
-```
-
-## Data visualization
-
-```{r}
-ggplot(movie_scores, 
-       aes(x = critics, y = audience)) +
-  geom_point(alpha = 0.5) + 
-  labs(
-    x = "Critics Score" , 
-    y = "Audience Score"
-    )
-```
-
-# Regression model
-
-## Fit a line
-
-... to *describe* the relationship between the critics and audience score
-
-```{r}
-#| out.width: "70%"
-p <- ggplot(data = movie_scores, 
-       mapping = aes(x = critics, y = audience)) +
-  geom_point(alpha = 0.5) + 
-  geom_smooth(method = "lm", color = "purple", se = FALSE) +
-  labs(
-    x = "Critics Score" , 
-    y = "Audience Score"
-    )
-
-p
-```
-
-## Terminology
-
-::: columns
-::: {.column width="30%"}
--   **Outcome, *Y***: variable describing the outcome of interest
--   **Predictor, X**: variable used to help understand the variability in the outcome
-:::
-
-::: {.column width="70%"}
-```{r}
-#| out.width: "100%"
-p
-```
-:::
-:::
-
-## Regression model {#regression-model-1}
-
-A **regression model** is a function that describes the relationship between the outcome, $Y$, and the predictor, $X$.
-
-$$\begin{aligned} Y &= \color{black}{\textbf{Model}} + \text{Error} \\[8pt]
-&= \color{black}{\mathbf{f(X)}} + \epsilon \\[8pt]
-&= \color{black}{\boldsymbol{\mu_{Y|X}}} + \epsilon \end{aligned}$$
-
-## Regression model
-
-::: columns
-::: {.column width="30%"}
-$$
-\begin{aligned} Y &= \color{purple}{\textbf{Model}} + \text{Error} \\[8pt]
-&= \color{purple}{\mathbf{f(X)}} + \epsilon \\[8pt]
-&= \color{purple}{\boldsymbol{\mu_{Y|X}}} + \epsilon 
-\end{aligned}
-$$
-:::
-
-::: {.column width="70%"}
-```{r}
-m <- lm(audience ~ critics, data = movie_scores)
-
-ggplot(data = movie_scores, 
-       mapping = aes(x = critics, y = audience)) +
-  geom_point(alpha = 0.5) + 
-  geom_smooth(method = "lm", color = "purple", se = FALSE) +
-  labs(x = "X", y = "Y") +
-  theme_minimal() +
-  theme(
-    axis.text = element_blank(),
-    axis.ticks.x = element_blank(), 
-    axis.ticks.y = element_blank()
-    )
-```
-:::
-:::
-
-## Regression model + residuals
-
-::: columns
-::: {.column width="30%"}
-$$\begin{aligned} Y &= \color{purple}{\textbf{Model}} + \color{blue}{\textbf{Error}} \\[8pt]
-&= \color{purple}{\mathbf{f(X)}} + \color{blue}{\boldsymbol{\epsilon}} \\[8pt]
-&= \color{purple}{\boldsymbol{\mu_{Y|X}}} + \color{blue}{\boldsymbol{\epsilon}} \\[8pt]
- \end{aligned}$$
-:::
-
-::: {.column width="70%"}
-```{r}
-#| echo: false
-ggplot(data = movie_scores,
-       mapping = aes(x = critics, y = audience)) +
-  geom_point(alpha = 0.5) +
-  geom_smooth(method = "lm", color = "purple", se = FALSE) +
-  geom_segment(aes(x = critics, xend = critics, 
-                   y = audience, yend = predict(m)), 
-               color = "blue") +
-  labs(x = "X", y = "Y") +
-  theme(
-    axis.text = element_blank(),
-    axis.ticks.x = element_blank(),
-    axis.ticks.y = element_blank()
-  )
-```
-:::
-:::
-
-# Simple linear regression
-
-## Simple linear regression
-
-Use **simple linear regression** to model the relationthip between a quantitative outcome ($Y$) and a single quantitative predictor ($X$): $$\Large{Y = \beta_0 + \beta_1 X + \epsilon}$$
+## The Scientific Method
 
 ::: incremental
--   $\beta_1$: True slope of the relationship between $X$ and $Y$
--   $\beta_0$: True intercept of the relationship between $X$ and $Y$
--   $\epsilon$: Error (residual)
+
+- Where does statistics come into the picture?
+
 :::
 
-## Simple linear regression
-
-$$\Large{\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1 X}$$
-
--   $\hat{\beta}_1$: Estimated slope of the relationship between $X$ and $Y$
--   $\hat{\beta}_0$: Estimated intercept of the relationship between $X$ and $Y$
--   No error term!
-
-## Choosing values for $\hat{\beta}_1$ and $\hat{\beta}_0$
-
-```{r}
-ggplot(data = movie_scores, 
-       mapping = aes(x = critics, y = audience)) +
-  geom_point(alpha = 0.4) + 
-  geom_abline(intercept = 32.3155, slope = 0.5187, color = "purple", size = 1) +
-  geom_abline(intercept = 25, slope = 0.7, color = "gray") +
-  geom_abline(intercept = 21, slope = 0.9, color = "gray") +
-  geom_abline(intercept = 35, slope = 0.3, color = "gray") +
-  labs(x = "Critics Score", y = "Audience Score")
-```
-
-## Residuals
-
-```{r}
-#| warning: false
-#| message: false
-ggplot(data = movie_scores, mapping = aes(x = critics, y = audience)) +
-  geom_point(alpha = 0.5) +
-  geom_smooth(method = "lm", color = "purple", se = FALSE) +
-  geom_segment(aes(x = critics, xend = critics, y = audience, yend = predict(m)), color = "steel blue") +
-  labs(x = "Critics Score", y = "Audience Score") +
-  theme(legend.position = "none")
-```
-
-$$\text{residual} = \text{observed} - \text{predicted} = y - \hat{y}$$
-
-## Least squares line
-
--   The residual for the $i^{th}$ observation is
-
-$$e_i = \text{observed} - \text{predicted} = y_i - \hat{y}_i$$
-
--   The **sum of squared** residuals is
-
-$$e^2_1 + e^2_2 + \dots + e^2_n$$
-
--   The **least squares line** is the one that minimizes the sum of squared residuals
-
-```{r}
-sx <- round(sqrt(var(movie_scores$critics)), 4)
-sy <- round(sqrt(var(movie_scores$audience)), 4)
-r <- round(cor(movie_scores$critics, movie_scores$audience), 4)
-xbar <- round(mean(movie_scores$critics), 4)
-ybar <- round(mean(movie_scores$audience), 4)
-```
-
-# Slope and intercept
-
-## Properties of least squares regression
-
--   The regression line goes through the center of mass point, the coordinates corresponding to average $X$ and average $Y$: $\hat{\beta}_0 = \bar{Y} - \hat{\beta}_1\bar{X}$
-
--   The slope has the same sign as the correlation coefficient: $\hat{\beta}_1 = r \frac{s_Y}{s_X}$
-
--   The sum of the residuals is zero: $\sum_{i = 1}^n \epsilon_i = 0$
-
--   The residuals and $X$ values are uncorrelated
-
-## Estimating the slope
-
-$$\large{\hat{\beta}_1 = r \frac{s_Y}{s_X}}$$
-
-::: columns
-::: {.column width="50%"}
 $$
-\begin{aligned} 
-s_X &= 30.1688 \\
-s_Y &=  20.0244 \\
-r &= 0.7814
-\end{aligned}
+\begin{array}{|c|}
+\hline
+\text{Observe}\\
+\hline
+\text{Question}\\
+\hline
+\text{Hypothesize}\\
+\hline
+\text{Experiment}\\
+\hline
+\text{Analyze}\\
+\hline
+\text{Conclude}\\
+\hline
+\end{array}
 $$
-:::
 
-::: {.column width="50%"}
-$$
-\begin{aligned}
-\hat{\beta}_1 &= 0.7814 \times \frac{20.0244}{30.1688} \\
-&= 0.5187\end{aligned}
-$$
-:::
-:::
-
-## Estimating the intercept
-
-$$\large{\hat{\beta}_0 = \bar{Y} - \hat{\beta}_1\bar{X}}$$
-
-::: columns
-::: {.column width="50%"}
-$$\begin{aligned}
-&\bar{x} = 60.8493 \\
-&\bar{y} = 63.8767 \\
-&\hat{\beta}_1 = 0.5187
-\end{aligned}$$
-:::
-
-::: {.column width="50%"}
-$$
-\begin{aligned}\hat{\beta}_0 &= 63.8767 - 0.5187 \times 60.8493 \\
-&= 32.3142
-\end{aligned}
-$$
-:::
-:::
-
-## Interpreting the slope {.smaller}
-
-**Poll:** The slope of the model for predicting audience score from critics score is 32.3142.
-Which of the following is the best interpretation of this value?
-
--   For every one point increase in the critics score, the audience score goes up by 0.5187 points, on average.
--   For every one point increase in the critics score, we expect the audience score to be higher by 0.5187 points, on average.
--   For every one point increase in the critics score, the audience score goes up by 0.5187 points.
--   For every one point increase in the audience score, the critics score goes up by 0.5187 points, on average.
-
-## Interpreting slope & intercept
-
-$$\widehat{\text{audience}} = 32.3142 + 0.5187 \times \text{critics}$$
+## Observe and Question
 
 ::: incremental
--   **Slope:** For every one point increase in the critics score, we expect the audience score to be higher by 0.5187 points, on average.
--   **Intercept:** If the critics score is 0 points, we expect the audience score to be 32.3142 points.
+
+- Tsunamis can occur after earthquakes
+
+- They tend to happen after high magnitude earthquakes
+
+- *How high magnitude does an earthquake have to be to cause a tsunami?*
+
+- *How high are the tsunami waves from high magnitude earthquakes?*
+
 :::
 
-## Is the intercept meaningful?
+## Hypothesize
 
-✅ The intercept is meaningful in context of the data if
-
--   the predictor can feasibly take values equal to or near zero or
--   the predictor has values near zero in the observed data
-
-. . .
-
-🛑 Otherwise, it might not be meaningful!
-
-# Prediction
-
-## Making a prediction
-
-Suppose that a movie has a critics score of 50.
-According to this model, what is the movie's predicted audience score?
-
-$$
-\begin{aligned}
-\widehat{\text{audience}} &= 32.3142 + 0.5187 \times \text{critics} \\
-&= 32.3142 + 0.5187 \times 50 \\
-&= 58.2492
-\end{aligned}
-$$
-
-## Extrapolation
-
-Suppose that a movie has a critics score of 0.
-According to this model, what is the movie's predicted audience score?
-
-```{r}
-p + coord_cartesian(xlim = c(0, 100))
-```
-
-# Recap
-
-## Recap {.smaller}
+::: {.small}
+>"On 30 July 2025, at 11:24:52 PETT (23:24:52 UTC, 29 July), a $M_w$ 8.8 megathrust earthquake struck off the eastern coast of the Kamchatka Peninsula in the Russian Far East, 119 km (74 mi) east-southeast of the coastal city of Petropavlovsk-Kamchatsky." -- [Wikipedia](https://en.wikipedia.org/wiki/2025_Kamchatka_Peninsula_earthquake)
+:::
 
 ::: incremental
--   Used simple linear regression to describe the relationship between a quantitative predictor and quantitative outcome variable.
 
--   Used the least squares method to estimate the slope and intercept.å
+- This earthquake was well above the severity to cause a tsunami
 
--   We interpreted the slope and intercept.
+- Higher magnitude earthquakes result in tsunamis with high waves
 
-    ::: incremental
-    -   **Slope:** For every one unit increase in $x$, we expect y to be higher/lower by $\hat{\beta}_1$ units, on average.
-    -   **Intercept:** If $x$ is 0, then we expect $y$ to be $\hat{\beta}_0$ units.
-    :::
-
--   Predicted the response given a value of the predictor variable.
-
--   Defined extrapolation and why we should avoid it.
 :::
+
+## Experiment
+
+::: incremental
+
+- We can't experiment well with this kind of science
+
+- But we can run a sort of "psuedo"-experiment
+
+- We select $100$ tsunamis at random and see if they were the product of an earthquake
+
+- We find out that $68$ of them had some connection to a earthquake
+
+:::
+
+## Vocabulary (Get used to it)
+
+::: incremental
+
+-   **Population:** the *entire collection* of individuals about which information is sought.
+
+-   **Sample:** a *subset* of population, containing the individuals that are actually observed.
+
+-   **Statistics:** is the study of procedures for collecting, describing, and drawing conclusions from information.
+
+    -  the science of describing or making inferences about a population, from a sample.
+
+:::
+
+## Analyze
+
+>Of the 748 tsunamis that have occurred since 1970, 464 of them can be directly associated with an earthquake.
+
+::: incremental
+
+- From this data we can say two things
+
+- $62\%$ of tsunamis are caused by earthquakes
+
+- $68\%$ of the tsunamis in our sample were caused by earthquakes
+
+  - **Parameter:** a value that describes an entire population.
+  
+  - **Statistic:** a value that describes a sample.
+
+:::
+
+# Sampling Techniques
+
+I hope you're hungry
+
+## Simple Random Sampling
+
+>How clean are the campus dining halls? Let's find out!
+
+::: incremental
+
+- We decide to line up all of the dining hall workers at Kramer
+
+- Everyone is assigned a number, $1$ to $50$
+
+- We randomly select $10$ numbers 
+
+- Then swab the hands of every person who's number came up
+
+:::
+
+## Simple Random Sampling
+
+::: incremental
+
+- **Simple Random Sample (SRS):** a sample chosen by a method in which collection of n population items is equally likely to make up the sample.
+
+- Every worker had the same chance of being selected
+
+  - $1/50$
+  
+  - Note: this only works if we select all $10$ numbers simultaneously
+  
+  - We'll play with that concept more later on
+
+:::
+
+## Stratified Sampling
+
+>Maybe the $10$ workers we selected all work the same station together. How can we make sure we get a sample from every station?
+
+::: incremental
+
+- Divide up workers by station, $5$ in total
+
+- Assign each group of workers numbers $1$ through $10$ 
+
+- Randomly select $2$ numbers
+
+- Swab the hands of each of those numbers from each group
+
+:::
+
+## Statified Sampling
+
+::: incremental
+
+-   **Stratified Sample:** The population is divided into groups, called **strata**, where the members of each *stratum* are similar in some way. Then a SRS is drawn from each stratum.
+
+- We *stratified* by station
+
+- We defined a SRS for the *strata*
+
+- We sampled from the strata based off of that SRS
+
+:::
+
+## Cluster Sampling
+
+>Foodborne outbreaks can also happen as a result of contaminated regions, not just bad worker hygeine. 
+
+::: incremental
+
+- We split the dining center up into a grid of 5 ft by 5 ft squares
+
+- We select $10$ squares at random and swab the entire square
+
+- Each of these squares are called *clusters*
+
+- **Cluster Sampling:** Items are drawn from the population in groups, or clusters.
+
+:::
+
+## Systematic Sampling
+
+>At the end of the day, the delivery mechanism of foodborne illness is the food itself. 
+
+::: incremental
+
+- We decide to sample the food coming off the line directly
+
+- It'd be a massive interruption of service to sample every food item coming out
+
+  - Plus, we can't serve food once we've sampled it
+  
+- So we decide to sample every $10^{th}$ item that comes from any station for possible contaminants
+
+:::
+
+## Systematic Sampling
+
+<br>
+
+::: incremental
+
+- Define a number, denoted $k$
+
+- Sample the $k^{th}$ item that's observed 
+
+- Repeat the sampling process every $k$ items that are observed
+
+:::
+
+## Voluntary Response
+
+::: incremental
+
+- We design a simple survey that asks the students:
+
+  - On a scale of 1 to 10 how clean does Kramer dining center appear?
+  
+  - Have you ever felt sick after eating at the dining center?
+  
+  - Do you think the dining center prioritizes food safety adequately?
+  
+- We send the survey to every student that's eaten at Kramer in the past year
+
+:::
+
+## Samples of Convenience
+
+::: incremental
+
+- How does the class feel about Kramer on a scale of 1 to 10?
+
+- It an easy sample to acquire, we just used who we had
+
+- It's a terrible sampling technique in general
+
+- Why?
+
+:::
+
+# Data Types
+
+## Data
+
+>What is data?
+
+::: incremental
+
+-   **Data:** Information that has been collected
+
+-   **Individual:** *Something* the information has been collected on (People/Places/Things/etc.)
+
+-   **Variables:** Characteristics about the **individuals** we collected information (**data**) from
+
+
+:::
+
+## Variables
+
+::: {style="font-size: 0.8em;"}
+
+$$
+\scriptsize
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+\textbf{Location of harvest} & \textbf{Date of harvest} & \textbf{Sex} & \textbf{Age class} & \textbf{Body mass in kg} \\
+\hline
+\text{Boyer}  & 2005\text{-}10\text{-}15 & \text{Female} & 3.5 & 34.0 \\
+\text{Desoto} & 2004\text{-}12\text{-}12 & \text{Male}   & 3.5 & 71.2 \\
+\text{Desoto} & 2009\text{-}10\text{-}17 & \text{Male}   & 0.5 & 21.8 \\
+\text{Desoto} & 2010\text{-}01\text{-}02 & \text{Male}   & 0.5 & 19.5 \\
+\text{Desoto} & 2005\text{-}12\text{-}11 & \text{Female} & 3.5 & 45.4 \\
+\hline
+\end{array}
+$$
+
+:::
+
+::: incremental
+
+- Not all variables are held equal
+
+- What's the difference between column 1 and column 2?
+
+  - What about 3 and 4?
+
+:::
+
+## Categorical Variables
+
+**Qualitative (Categorical) variable:** The value of the variable represents a *descriptive categories*
+
+::: incremental
+
+-   Identifying labels or names
+
+-   We can't really do math with a label or name
+
+-   "Male" $= 0$, "Female" $= 1$
+
+:::
+
+## Categorical Variables
+
+::: incremental
+
+-   **Ordinal variables:** Categories/values of the variable have a natural ordering
+
+    -   Letter grade: A, B, C, D, F
+
+    -   Age classifications: Young, Middle-aged, Old
+
+-   **Nominal variable:** Categories/values of the variable cannot be ordered **naturally**
+
+    -   Degree program
+
+    -   Sex: Male / Female
+    
+:::
+
+## Numeric Variables
+
+**Quantitative variable:** The value of the variable represents a *meaningful number*
+
+::: incremental
+
+-   Body mass, age, height, time
+
+-   We can inherently do math with these
+
+-   Can still be problematic due to *units* 
+
+:::
+
+## Numeric Variables
+
+::: incremental
+
+-   **Discrete variable:** A countable number of values (0, 1, 2, 3, 4, ...)
+
+    -   Population size of fish in a pond
+
+    -   How many times a coin flip was successfully called
+
+-   **Continuous variable:** A continuous range of numbers (0, 0.1, 0.11, 0.111, ...)
+
+    -   Temperature
+
+    -   Volume of liquid in a glass
+
+    -   Body Mass
+
+:::
+
+## Numeric Variables
+
+
+::: incremental
+
+- **Interval** level
+
+  -   Differences between values make sense
+  
+  -   Ratios don't make sense because **zero has no meaning**
+
+- **Ratio** level
+
+  -   Differences between values make sense
+  
+  -   Ratios **also make sense**
+  
+  -   Zero **has meaning**, it represents absence of the quantity
+
+:::
+
+# Summarizing Data
+
+## Frequency Distribution
+
+>Statistics is really good at summarizing grotesque amounts of information
+
+::: incremental 
+
+- Of the $748$ tsunamis that have occurred since 1970, when do they usually occur?
+
+- We can look at the months, since exact date is a little impractical
+
+- Instead of a table of raw data, we can just record each time a specific month appears
+
+:::
+
+## Frequency Distribution
+
+**Frequency distribution:**
+
+-   Groups data into categories
+
+-   Records the number of observations that fall into each category
+
+-   "How **frequently** do these variables occur in my sample?"
+
+::: {style="font-size: 0.8em;"}
+
+$$
+\begin{array}{|c|c|c|c|c|c|c|}
+\hline
+\text{Month} & \text{Jan} & \text{Feb} & \text{Mar} & \text{Apr} & \text{May} & \text{Jun} \\
+\hline
+\text{Frequency} & 64 & 53 & 68 & 62 & 62 & 63\\
+\hline
+\text{Month} & \text{Jul} & \text{Aug} & \text{Sep} & \text{Oct} & \text{Nov} & \text{Dec}\\
+\hline
+\text{Frequency} & 66 & 67 & 58 & 63 & 65 & 57 \\
+\hline
+\end{array}
+$$
+
+:::
+
+
+## Relative Frequency
+
+::: {.small}
+
+**Relative frequency distribution**
+
+-   Divide the frequency by the total observations
+
+-   This gives us the **proportion** of units in each category
+
+-   "What **percentage** of my sample is this category?"
+
+:::
+
+::: {style="font-size: 0.8em;"}
+
+$$
+\begin{array}{|c|c|c|c|c|c|c|}
+\hline
+\text{Month} & \text{Jan} & \text{Feb} & \text{Mar} & \text{Apr} & \text{May} & \text{Jun} \\
+\hline
+\text{Frequency} & 64 & 53 & 68 & 62 & 62 & 63\\
+\hline
+\text{Relative Frequency} & 0.09 & 0.07 & 0.09 & 0.08 & 0.08 & 0.08\\
+\hline
+\text{Month} & \text{Jul} & \text{Aug} & \text{Sep} & \text{Oct} & \text{Nov} & \text{Dec}\\
+\hline
+\text{Frequency} & 66 & 67 & 58 & 63 & 65 & 57 \\
+\hline
+\text{Relative Frequency} & 0.09 & 0.09 & 0.08 & 0.08 & 0.09 & 0.08 \\ 
+\hline
+\end{array}
+$$
+
+:::
+
+## Numeric Frequency 
+
+::: incremental
+
+- We can do the same thing with numeric values
+
+- If we wanted to group the tsunamis caused by earthquakes by magnitude of earthquake
+
+- We'd need to define some kind of classification for earthquake magnitude
+
+- Then we could sort them by that 
+
+- Let's say: $0.0-0.9$, $1.0-1.9$, ...
+
+:::
+
+## Numeric Frequency
+
+**There were no tsunamis caused by earthquakes less than a magnitude of 4, so we can remove those classes**
+
+<br>
+
+::: {style="font-size: 0.6em;"}
+
+$$
+\begin{array}{|c|c|c|c|c|c|c|}
+\hline
+\text{Class} &  4.0-4.9 & 5.0-5.9 & 6.0-6.9 & 7.0-7.9 & 8.0-8.9 & 9.0-9.9 \\
+\hline
+\text{Frequency} &  2  & 22 & 188 & 225 & 25 & 2\\
+\hline
+\text{Relative Frequency} & 0.0043 & 0.0474 & 0.4052 & 0.4849 & 0.0539 & 0.0043\\
+\hline
+\end{array}
+$$
+
+:::
+
+::: incremental
+
+- Same table, same general process, same interpretation
+
+- Class definitions are arbitrary but try to make them *make sense*
+
+:::
+
+# Visualizing Data
+
+## Bar Graphs
+
+```{r,echo=FALSE,fig.align='center'}
+Mo_tsunami=as.data.frame(table(raw_tsunami$Mo))
+Mo_tsunami$Var1=c("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec")
+par(mar = c(3, 4, 3, 1))
+barplot(Mo_tsunami$Freq,
+        names.arg = Mo_tsunami$Var1,
+        las = 1,
+        cex.names = 0.8,
+        col = "#00CBD090",
+        ylim=c(0,70),
+        main = "Occurrence of Tsunamis by Month",
+        xlab = "Month")
+```
+
+## Bar Graphs
+
+```{r,echo=FALSE,fig.align='center'}
+par(mar = c(5, 5, 4, 2))
+barplot(Mo_tsunami$Freq,
+        names.arg = Mo_tsunami$Var1,
+        horiz = T,
+        las = 1,
+        cex.names = 0.8,
+        col = "#00CBD090",
+        xlim=c(0,70),
+        main = "Occurrence of Tsunamis by Month",
+        xlab = "Month")
+```
+
+## Pie Chart
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE, fig.align='center'}
+library(scales)
+library(ggplot2)
+tab_lev=Mo_tsunami
+tab_lev$Relative_Frequency=round(tab_lev$Freq/sum(tab_lev$Freq),digits=2)
+ggplot(data=tab_lev, aes(x="", y=Freq, fill=Var1)) +
+  geom_bar(stat="identity",width=1,color="black") +
+  labs(x="Month", y="Frequency", title="Occurrence of Tsunamis by Month", fill="Month") +
+  geom_text(aes(label = percent(Relative_Frequency)),
+            position = position_stack(vjust = 0.5)) +
+  coord_polar("y",start=0) + theme_void()
+```
+
+## Histograms
+
+::: {style="font-size: 0.6em;"}
+
+$$
+\begin{array}{|c|c|c|c|c|c|c|}
+\hline
+\text{Class} &  4.0-4.9 & 5.0-5.9 & 6.0-6.9 & 7.0-7.9 & 8.0-8.9 & 9.0-9.9 \\
+\hline
+\text{Frequency} &  2  & 22 & 188 & 225 & 25 & 2\\
+\hline
+\text{Relative Frequency} & 0.0043 & 0.0474 & 0.4052 & 0.4849 & 0.0539 & 0.0043\\
+\hline
+\end{array}
+$$
+
+:::
+
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE, fig.align='center'}
+hist(tsunami$magnitude,breaks=6,xlim=c(4,10),col="#C1E2CC90",xlab="Magnitude",main="Earthquakes associated with tsunamis")
+```
+
+## Histograms
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE, fig.align='center'}
+hist(tsunami$magnitude,breaks=10,xlim=c(4,10),col="#C1E2CC90",xlab="Magnitude",main="Earthquakes associated with tsunamis")
+```
+
+## Histograms
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE, fig.align='center'}
+hist(tsunami$magnitude,breaks=60,col="#C1E2CC90",xlab="Magnitude",main="Earthquakes associated with tsunamis")
+```
+
+## Time plots
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE, fig.align='center'}
+seven=subset(tsunami,tsunami$magnitude>8)
+plot(seven$year,seven$wave_height,type="b",cex=1.2,lwd=2,xlab="Year",ylab="Wave Height",main="Wave Heights of High Magnitude Earthquakes (>8.0)")
+```
+
+# Go Away

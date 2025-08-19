@@ -1,0 +1,35 @@
+---
+title: "Perform an Analysis"
+---
+
+Using [R programming](https://www.r-project.org), complete an analysis of either (a) pre-selected data provided in the course website/Canvas or (b) outside data you selected that has been approved by the instructor. 
+
+- **Wine Quality**: [Data](project_data/winequality-red.csv)
+
+- **Heart Biometrics**: [Data](project_data/heart.csv)
+
+- **Iris**: Data can be imported with `iris=data(iris)`
+
+- **Trees**: Data can be important with `trees=data(trees)`
+
+The analysis should include:
+
+  -	All basic summary statistics discussed during the course.
+  
+  -	At least two graphics from class.
+  
+  -	A linear model or hypothesis test
+
+Provide all your source code, with every line of code commented, and a brief statement about what can be concluded from the analysis.
+
+---
+
+**Resources for R**
+
+- [RStudio](https://posit.co/download/rstudio-desktop/)
+
+- [w3schools for R](https://www.w3schools.com/r/)
+
+- [R for Data Science](https://r4ds.hadley.nz)
+
+- [Big Book of R](https://www.bigbookofr.com)

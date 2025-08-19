@@ -4,7 +4,7 @@
 @import 'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap';
 
 $font-family-sans-serif: "Atkinson Hyperlegible", sans-serif;
-$presentation-heading-color: #5B888C;
+$presentation-heading-color: #512888;
 $presentation-title-slide-text-align: "left";
 
 /*-- scss:rules --*/
@@ -18,7 +18,7 @@ details>summary {
 }
 
 .reveal .slide .question {
-  border-left: 3px solid #5B888C;
+  border-left: 3px solid #512888;
   padding-left: 0.5em;
   padding-top: 0.25em;
   padding-bottom: 0.25em;

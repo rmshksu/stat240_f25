@@ -2,331 +2,238 @@
 title: "Syllabus"
 ---
 
-[**Click here**](/documents/sta210-s22-syllabus.pdf "PDF of syllabus") **to download a PDF copy of the syllabus.**
+[**Click here**](/documents/Syllabus-STAT240-Fall2025.pdf "PDF of syllabus") **to download a PDF copy of the syllabus.**
 
 ## Course info
 
-|           | Day       | Time              | Location                       |
-|-----------|-----------|-------------------|--------------------------------|
-| Lectures  | Tue & Thu | 1:45 pm - 3:00 pm | Reuben-Cooke Building 130      |
-| Section 1 | Mon       | 1:45 pm - 3:00 pm | Perkins LINK 087 (Classroom 3) |
-| Section 2 | Mon       | 3:30 pm - 4:45 pm | Old Chemistry 003              |
-| Section 3 | Mon       | 5:15 pm - 6:30 pm | Social Sciences 311            |
+This course will make use of both Canvas and an external course website built through [GitHub Pages](https://pages.github.com). The course can be completed without using the GitHub Pages, however using it is highly recommended.
+
+Credit Hours: 3
+Lecture: In-Person
+Class Meeting Days and Time: M/W/F 11:30 AM – 12:20 PM CST
+Class Meeting Location: Dickens 207
+
+Instructor Information
+Name: Robert Sholl
+Email: rmsholl@ksu.edu
+Department: Statistics
+Office: Dickens 009C
+Office Hours: M/W 10:20 AM - 11:20 AM CST or by-appointment
+
 
 ## Learning objectives
 
-By the end of the semester, you will be able to...
+By the end of this course, students will have a basic grasp of:
 
--   analyze real-world data to answer questions about multivariable relationships.
--   fit and evaluate linear and logistic regression models.
--   assess whether a proposed model is appropriate and describe its limitations.
--   use Quarto to write reproducible reports and GitHub for version control and collaboration.
--   communicate results from statistical analyses to a general audience.
+- Graphical tools for data analysis
 
-## Community
+- Sampling methods for observational studies
 
-### Duke Community Standard
+- The design of experiments
 
-As a student in this course, you have agreed to uphold the [Duke Community Standard](https://studentaffairs.duke.edu/conduct/about-us/duke-community-standard) as well as the practices specific to this course.
+- Probability and distribution theory
 
-```{=html}
-<iframe width="560" height="315" src="https://www.youtube.com/embed/_KN97j30ST4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
-```
-### Inclusive community
+- Simple linear regression
 
-It is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students' learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength, and benefit.
-It is my intent to present materials and activities that are respectful of diversity and in alignment with [Duke's Commitment to Diversity and Inclusion](https://provost.duke.edu/initiatives/commitment-to-diversity-and-inclusion).
-Your suggestions are encouraged and appreciated.
-Please let me know ways to improve the effectiveness of the course for you personally, or for other students or student groups.
+- Uncertainty quantification
 
-Furthermore, I would like to create a learning environment for my students that supports a diversity of thoughts, perspectives and experiences, and honors your identities.
-To help accomplish this:
+- t-tests for statistical hypotheses
 
--   If you feel like your performance in the class is being impacted by your experiences outside of class, please don't hesitate to come and talk with me. If you prefer to speak with someone outside of the course, your academic dean is an excellent resource.
--   I (like many people) am still in the process of learning about diverse perspectives and identities. If something was said in class (by anyone) that made you feel uncomfortable, please let me or a member of the teaching team know.
 
-### Accessibility
+## Prerequisites
 
-If there is any portion of the course that is not accessible to you due to challenges with technology or the course format, please let me know so we can make appropriate accommodations.
+There are no mandatory prerequisites but the completion of high school algebra is strongly encouraged. 
 
-The [Student Disability Access Office (SDAO)](https://access.duke.edu/students) is available to ensure that students are able to engage with their courses and related assignments.
-Students should be in touch with the Student Disability Access Office to [request or update accommodations](https://access.duke.edu/requests) under these circumstances.
+## Required Materials
 
-### Communication
+A calculator is required. Cell phone calculators are not allowed in the exams.
+The textbook for this class is provided for free.
 
-All lecture notes, assignment instructions, an up-to-date schedule, and other course materials may be found on the course website at [sta210-s22.github.io/website](https://sta210-s22.github.io/website).
+## Expectations
 
-I will regularly send course announcements via email and Sakai, make sure to check one or the other of these regularly.
-If an announcement is sent Monday through Thursday, I will assume that you have read the announcement by the next day.
-If an announcement is sent on a Friday or over the weekend, I will assume that you have read it by Monday.
+### What you can expect of your instructor
 
-### Where to get help
+Assignments and exams will be graded within a week of completion. Per university requirements all coursework that students have completed, signed their name on, and received a grade for are the property of the student. If you would like the physical copy of your exam after it has been graded you can email me or speak to me directly. 
 
--   If you have a question during lecture or lab, feel free to ask it! There are likely other students with the same question, so by asking you will create a learning opportunity for everyone.
--   The teaching team is here to help you be successful in the course. You are encouraged to attend office hours to ask questions about the course content and assignments. Many questions are most effectively answered as you discuss them with others, so office hours are a valuable resource. Please use them!
--   Outside of class and office hours, any general questions about course content or assignments should be posted on the course forum [Conversations](https://sakai.duke.edu/portal/site/779c3ebe-3b88-4bcc-bd01-1813e8396a23/tool/13b6446a-a6c6-4222-8cfb-c36d1f70802b). There is a chance another student has already asked a similar question, so please check the other posts in Conversations before adding a new question. If you know the answer to a question posted in the discussion forum, I encourage you to respond!
--   Emails should be reserved for questions not appropriate for the public forum. **If you email me, please include "STA 210" in the subject line.** Barring extenuating circumstances, I will respond to STA 210 emails within 48 hours Monday - Friday. Response time may be slower for emails sent Friday evening - Sunday.
+This course is designed to encourage students to engage with their education without the fear of making mistakes. The pacing of assignments is such that students won’t have a strong assessment of their grades until after the first exam. As such I provide multiple opportunities throughout the semester to recover lost points.
 
-Check out the [Support](/course-support.html) page for more resources.
+If you have a personal concern or question you would like to talk about, please send me an email directly.
 
-## Textbooks
+### What I expect of you
 
-While there is no official textbook for the course, we will be assigning readings from the following textbooks.
+Expect to spend 3 hours a week on this course outside of class time, it’s best to pace this as 20-30 minutes of practice or reading daily. Textbook readings should be completed prior to lecture. I expect you to ask questions if something is unclear.
 
--   [R for Data Science](https://r4ds.had.co.nz/) by Garret Grolemund and Hadley Wickham
+### Netiquette
 
--   [Introduction to Modern Statistics](https://openintro-ims.netlify.app/) by Mine Çetinkaya-Rundel and Johanna Hardin
+K-State Online rules of style and [Netiquette Standards](https://online.k-state.edu/student-support/netiquette/) (network etiquette) are expected when communicating through class e-mail and discussions.
 
--   [Tidy modeling with R](https://www.tmwr.org/) by Max Kuhn and Julia Silge
+## Assignments
 
--   [Beyond Multiple Linear Regression](https://bookdown.org/roback/bookdown-BeyondMLR/) by Paul Roback and Julie Legler
 
-## Lectures and labs
+### Attendance and Participation
 
-The goal of both the lectures and the labs is for them to be as interactive as possible.
-My role as instructor is to introduce you new tools and techniques, but it is up to you to take them and make use of them.
-A lot of what you do in this course will involve writing code, and coding is a skill that is best learned by doing.
-Therefore, as much as possible, you will be working on a variety of tasks and activities throughout each lecture and lab.
-You are expected to attend all lecture and lab sessions and meaningfully contribute to in-class exercises and discussion.
-Additionally, some lectures will feature [application exercises] that will be graded.
-In addition to application exercises will be periodic activities help build a learning community.
-These will be short, fun activities that will help everyone in the class connect throughout the semester.
+Attendance and in-class participation are highly encouraged but not required. All relevant course content will be published on Canvas and the external course website. Lectures will only be recorded or held virtually in the event of extreme circumstances where class cannot be held in person. Extra credit may be given out periodically to students who are present in class.
 
-You are expected to bring a laptop to each class so that you can take part in the in-class exercises.
-Please make sure your laptop is fully charged before you come to class as the number of outlets in the classroom will not be sufficient to accommodate everyone.
-More information on loaner laptops can be found [here](https://keeplearning.duke.edu/technical-support/).
 
-## Teams
+### Unit Question Banks
 
-You will be assigned to a team at the beginning of the semester.
-You are encouraged to sit with your teammates in lecture and you will also work with them in the lab sessions.
-All team members are expected to contribute equally to the completion of the labs and project and you will be asked to evaluate your team members throughout the semester.
-Failure to adequately contribute to an assignment will result in a penalty to your mark relative to the team's overall mark.
+Each unit will have a question bank of 50 problems related to the unit. Prior to each unit’s exam you will be required to submit their answers to 10 problems of your choosing out of the relevant question bank. You are not required to show your work since no partial credit will be offered.
+You can turn in worked solutions to any problem from the bank after class or during office hours to receive feedback with no penalty.
 
-You are expected to make use of the provided GitHub repository as their central collaborative platform.
-Commits to this repository will be used as a metric (one of several) of each team member's relative contribution for each project.
+You can continue to complete problems beyond the initial 10 for extra credit towards that unit’s exam. You must show your work for all extra problems. Each additional problem correctly completed is 0.5 points extra out of the 100 each exam is worth.  
 
-## Assessment
+### Final Report
+You will be asked to complete one of the options below:
 
-Assessment for the course is comprised of six components: application exercises, homework assignments, labs, exams, projects, and teamwork.
+A. Attend a scientific talk (on or off campus) then write a paper with the following:
 
-### Application exercises
+  -	2-3 sentences summarizing the talk.
+  
+  -	2-3 sentences about how you felt about the talk and the speaker.
+  
+  -	1-2 sentences describing anything you learned.
+  
+  -	1-2 sentences describing anything you didn’t understand or were unsure about.
+  
+  -	2-3 sentences either (a) describing any statistical methods that were used/mentioned or (b) describing any statistical methods that could be applicable to the topic discussed.
 
-Parts of some lectures will be dedicated to working on Application Exercises (AEs).
-These exercises which give you an opportunity to practice apply the statistical concepts and code introduced in the readings and lectures.
-These AEs are due within three days of the corresponding lecture period.
-Specifically, AEs from Tuesday lectures are due Friday by 11:59 pm ET, and AEs from Thursday lectures are due Sunday by 11:59 pm ET.
 
-Because these AEs are for practice, they will be graded based on completion, i.e., a good-faith effort has been made in attempting all parts.
-Successful on-time completion of at least 80% of AEs will result in full credit for AEs in the final course grade.
+B. Talk to someone who does research or uses statistics regularly as part of their job. They can be an academic, industry, or government professional. Ask them about their education in statistics, how they use statistics, and how they view statistics in relation to their profession. Summarize the discussion, anything you learned from it, and anything you recognized from this course during the discussion in 4-8 sentences at most.
 
-### Labs
+C. Using R programming, complete an analysis of either (a) pre-selected data provided in Canvas or (b) outside data you selected that has been approved by the instructor. The analysis should include:
 
-In labs, you will apply the concepts discussed in lecture to various data analysis scenarios, with a focus on the computation.
-Most lab assignments will be completed in teams, and all team members are expected to contribute equally to the completion of each assignment.
-You are expected to use the team's GitHub repository on the course's GitHub organization as the central platform for collaboration.
-Commits to this repository will be used as a metric of each team member's relative contribution for each lab, and there will be periodic peer evaluation on the team collaboration.
-Lab assignments will be completed using Quarto, correspond to an appropriate GitHub repository, and submitted for grading in Gradescope.
+  -	All basic summary statistics discussed during the course.
+  -	At least two graphics from class.
+  -	A linear model or hypothesis test
 
-*The lowest lab grade will be dropped at the end of the semester.*
-
-### Homework
-
-In homework, you will apply what you've learned during lecture and lab to complete data analysis tasks.
-You may discuss homework assignments with other students; however, homework should be completed and submitted individually.
-Similar to lab assignments, homework must be typed up using Quarto and GitHub and submitted as a PDF in Gradescope.
-
-One homework assignment will be dedicated to a *statistics experience*.
-The statistics experience is an opportunity to engage with statistics and data science outside of the classroom through podcasts, books, seminars, data analysis competitions, and other activities.
-As you complete these experiences, the goal is to consider how the material you're learning in the course connects with society more broadly.
-
-*The lowest homework grade will be dropped at the end of the semester.*
+Provide all your source code, with every line of code commented, and a brief statement about what can be concluded from the analysis.
 
 ### Exams
 
-There will be three, take-home, open-note exams.
-Through these exams you have the opportunity to demonstrate what you've learned in the course thus far.
-The exams will focus on the conceptual understanding of the content, and they may also include small analysis and computational tasks.
-The content of the exam will be related to the content in the prepare, practice, and perform assignments.
-More detail about the exams will be given during the semester.
+Each unit will conclude with a comprehensive exam. Due to the nature of the course topic every exam is inherently comprehensive to previous units. All exams will be held in-class, you will have the full 50 minutes to complete the exam. 
 
-### Project
+### Grading
 
-The purpose of the [project](/project-description/) is to apply what you've learned throughout the semester to analyze an interesting, data-driven research question.
-The project will be completed with your lab teams, and each team will present their work in video and in writing during the final exam period.
-More information about the project will be provided during the semester.
+The following grading distribution will be used: A= 90-100%, B=80-89%, C=70-79%, D=60-69%, F=59% and below.
+Grades will be assigned via the rubric below:
 
-## Grading
+| Item                  | Percentage   |
+|-----------------------|--------------|
+| Unit 1 Problems       | 10%          |
+| Unit 2 Problems       | 10%          |
+| Unit 3 Problems       | 10%          |
+| Final Report          | 10%          |
+| Exam  1               | 20%          |
+| Exam  2               | 20%          |
+| Exam  3               | 20%          |
+| Total                 | 100%         |
 
-The final course grade will be calculated as follows:
+### Late or Missing Assignments
 
-| Category              | Percentage      |
-|-----------------------|-----------------|
-| Application exercises | 3%              |
-| Homework              | 35% (7% x 5)    |
-| Project               | 15%             |
-| Lab                   | 14% (2.33% x 6) |
-| Exam 01               | 10%             |
-| Exam 02               | 10%             |
-| Exam 03               | 10%             |
-| Teamwork              | 3%              |
+There will be several assignments that are due by 11:59pm CST on the date listed. The purpose of these deadlines is to help you stay on track to complete all materials in a timely manner. If for any reason you are unable or fail to complete the assignment on time, please contact me as soon as possible so that we can make arrangements for the completion of the work.
 
-The final letter grade will be determined based on the following thresholds:
 
-| Letter Grade | Final Course Grade |
-|--------------|--------------------|
-| A            | \>= 93             |
-| A-           | 90 - 92.99         |
-| B+           | 87 - 89.99         |
-| B            | 83 - 86.99         |
-| B-           | 80 - 82.99         |
-| C+           | 77 - 79.99         |
-| C            | 73 - 76.99         |
-| C-           | 70 - 72.99         |
-| D+           | 67 - 69.99         |
-| D            | 63 - 66.99         |
-| D-           | 60 - 62.99         |
-| F            | \< 60              |
+## Technology
 
-## Five tips for success
+### Technical Difficulties
 
-Your success on this course depends very much on you and the effort you put into it.
-The course has been organized so that the burden of learning is on you.
-Your TAs and I will help you be providing you with materials and answering questions and setting a pace, but for this to work you must do the following:
+K-State has technology recommendations including a [Technology Recommendations](https://www.k-state.edu/it/resources/buying/faqs.html) for success in online learning. If you have issues with your technology, please contact K-State's [IT Service Desk](https://www.k-state.edu/it/get-help/) for assistance (they are the technology experts). If you miss a deadline due to technological difficulties, [Submit a Ticket](https://www.k-state.edu/it/get-help/submit-ticket/), then exceptions may be made on a case-by-case basis. Phone: 785-532-7722 or toll free 1-800-865-6143.
 
-1.  Complete all the preparation work before class.
-2.  Ask questions. As often as you can. In class, out of class. Ask me, ask the TAs, ask your friends, ask the person sitting next to you. This will help you more than anything else. If you get a question wrong on an assessment, ask us why. If you're not sure about the homework, ask. If you hear something on the news that sounds related to what we discussed, ask. If the reading is confusing, ask.
-3.  Do the readings.
-4.  Do the homework and lab.The earlier you start, the better. It's not enough to just mechanically plow through the exercises. You should ask yourself how these exercises relate to earlier material, and imagine how they might be changed (to make questions for an exam, for example.)
-5.  Don't procrastinate. If something is confusing to you in Week 2, Week 3 will become more confusing, Week 4 even worse, and eventually you won't know where to begin asking questions. Don't let the week end with unanswered questions. But if you find yourself falling behind and not knowing where to begin asking, come to office hours, and let me help you identify a good (re)starting point.
+Other Technology Resources:
 
-## Course policies
+- [Canvas](https://canvas.k-state.edu/info/help/)
 
-### Academic integrity
+- [Office 365 Help and Support](http://www.k-state.edu/its/office365/help/index.html)
 
-**TL;DR: Don't cheat!**
+- [Zoom](https://support.zoom.us/hc/en-us)
 
-All students must adhere to the [Duke Community Standard (DCS)](https://trinity.duke.edu/undergraduate/academic-policies/community-standard-student-conduct): Duke University is a community dedicated to scholarship, leadership, and service and to the principles of honesty, fairness, and accountability.
-Citizens of this community commit to reflect upon these principles in all academic and non-academic endeavors, and to protect and promote a culture of integrity.
+- [Media Studio](https://guides.lib.k-state.edu/innovation-lab/media-studio)
 
-To uphold the Duke Community Standard:
+- [K-State Libraries](http://www.lib.k-state.edu/)
 
-Students affirm their commitment to uphold the values of the Duke University community by signing a pledge that states:
+## University Policies
 
--   I will not lie, cheat, or steal in my academic endeavors;
--   I will conduct myself honorably in all my endeavors;
--   I will act if the Standard is compromised
+1. [Academic Honesty](https://www.k-state.edu/provost/resources/teaching/course.html#academichonesty)
 
-Regardless of course delivery format, it is your responsibility to understand and follow Duke policies regarding academic integrity, including doing one's own work, following proper citation of sources, and adhering to guidance around group work projects.
-Ignoring these requirements is a violation of the Duke Community Standard.
-If you have any questions about how to follow these requirements, please contact Jeanna McCullers ([jeanna.mccullers\@duke.edu](mailto:jeanna.mccullers@duke.edu)), Director of the Office of Student Conduct.
+Kansas State University has an Honor and Integrity System based on personal integrity to assure that one's work on all assignments, examinations, or other course work is performed honestly and without unauthorized assistance.
 
-### Collaboration policy
+2. [Students with Disabilities](https://www.k-state.edu/provost/resources/teaching/course.html#studentswithdisabilities)
 
-Only work that is clearly assigned as team work should be completed collaboratively.
+Students with disabilities who need classroom accommodations (such as administration of course exams with extended time and/or distraction reduced environment or providing an alternate format of text materials), access to technology, or information about emergency building/campus evacuation processes should contact the Student Access Center and/or their instructor.
 
--   The homework assignments must be completed individually and you are welcomed to discuss the assignment with classmates at a high level (e.g., discuss what's the best way for approaching a problem, what functions are useful for accomplishing a particular task, etc.). However you may not directly share answers to homework questions (including any code) with anyone other than myself and the teaching assistants.
--   For the projects, collaboration within teams is not only allowed, but expected. Communication between teams at a high level is also allowed however you may not share code or components of the project across teams.
+3. [Classroom Conduct](https://www.k-state.edu/provost/resources/teaching/course.html#classroomconduct)
 
-### Policy on sharing and reusing code
+All student activities in the University, including this course, are governed by the Student Judicial [Conduct Code](https://www.k-state.edu/sga/judicial/) as outlined in the Student Governing Association By Laws, Article V, Section 3, number 2. Students who engage in behavior that disrupts the learning environment may be asked to leave the class.
 
-I am well aware that a huge volume of code is available on the web to solve any number of problems.
-Unless I explicitly tell you not to use something, the course's policy is that you may make use of any online resources (e.g. RStudio Community, StackOverflow) but you must explicitly cite where you obtained any code you directly use (or use as inspiration).
-Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism.
-On individual assignments you may not directly share code with another student in this class, and on team assignments you may not directly share code with another team in this class.
+4. [Mutual Respect and Inclusion](https://www.k-state.edu/provost/resources/teaching/course.html#mutualrespectandinclusion)
 
-### Late work policy
+At K-State, faculty and staff are committed to creating and maintaining an inclusive and supportive learning environment for students from diverse backgrounds and perspectives. If you feel uncomfortable in this class or experience bias or discrimination, there are resources available to you.
 
-The due dates for assignments are there to help you keep up with the course material and to ensure the teaching team can provide feedback within a timely manner.
-We understand that things come up periodically that could make it difficult to submit an assignment by the deadline.
-Note that the lowest homework and lab assignment will be dropped to accommodate such circumstances.
+5. [Discrimination and Harassment](https://www.k-state.edu/provost/resources/teaching/course.html#discimination)
 
--   Homework and labs may be submitted up to 3 days late.
-    There will be a 5% deduction for each 24-hour period the assignment is late.
+Instructors also have a duty to report any behavior they become aware of that potentially violates the University’s policy prohibiting discrimination, harassment, and sexual harassment.
 
--   There is no late work accepted for application exercises, since these are designed to help you prepare for labs and homework.
 
--   The late work policy for exams will be provided with the exam instructions.
+## Additional Policies
 
--   The late work policy for the project will be provided with the project instructions.
+### Artificial Intelligence
 
-### Waiver for extenuating circumstances
+This course assumes that all your course work will be done by you. You will not need to use artificial intelligence (AI) tools such as ChatGPT for any of the assignments. In general, for this class, you should not have an AI instrument do the writing of any portion of any assignment, just as you would not have another person do your writing for you. My aim is to keep the focus on your originality and creativity, your learning and reflection. If you do use AI for any part of any assignment, you will need to cite it fully and properly, using MLA’s AI citation guidelines. Using an AI tool to generate assignment content without proper attribution would be a violation of the K-State Honor Pledge.
 
-If there are circumstances that prevent you from completing a lab or homework assignment by the stated due date, you may email [Dr. Çetinkaya-Rundel](mailto:mc301@duke.edu) **and** our head TA [Rick Presman](mailto:rick.presman@duke.edu) before the deadline to waive the late penalty.
-In your email, you only need to request the waiver; you do not need to provide explanation.
-This waiver may only be used for once in the semester, so only use it for a truly extenuating circumstance.
+### Copyright
 
-If there are circumstances that are having a longer-term impact on your academic performance, please let your academic dean know, as they can be a resource.
-Please let Dr. Çetinkaya-Rundel know if you need help contacting your academic dean.
+© Copyright 2025 (Robert Matthew Sholl) as to this syllabus and all lectures. During this course students are prohibited from selling notes to or being paid for taking notes by any person or commercial firm without the express written permission of the professor teaching this course. In addition, students in this class are not authorized to provide class notes or other class-related materials to any other person or entity, other than sharing them directly with another student taking the class for purposes of studying, without prior written permission from the professor teaching this course.
 
-### Regrade request policy
+### Academic Freedom
 
-Regrade requests must be submitted on Gradescope within a week of when an assignment is returned.
-Regrade requests will be considered if there was an error in the grade calculation or if you feel a correct answer was mistakenly marked as incorrect.
-Requests to dispute the number of points deducted for an incorrect response will not be considered.
-Note that by submitting a regrade request, the entire question will be graded which could potentially result in losing points.
+Kansas State University is a community of students, faculty, and staff who work together to discover new knowledge, create new ideas, and share the results of their scholarly inquiry with the wider public. Although new ideas or research results may be controversial or challenge established views, the health and growth of any society requires frank intellectual exchange. Academic freedom protects this type of free exchange and is thus essential to any university's mission.
 
-*No grades will be changed after the final project presentations.*
+Moreover, academic freedom supports collaborative work in the pursuit of truth and the dissemination of knowledge in an environment of inquiry, respectful debate, and professionalism. Academic freedom is not limited to the classroom or to scientific and scholarly research but extends to the life of the university as well as to larger social and political questions. It is the right and responsibility of the university community to engage with such issues.
 
-### Attendance policy
+### Weapons Policy
 
-Responsibility for class attendance rests with individual students.
-Since regular and punctual class attendance is expected, students must accept the consequences of failure to attend.
-More details on Trinity attendance policies are available [here](https://trinity.duke.edu/undergraduate/academic-policies/class-attendance-and-missed-work).
+Kansas State University prohibits the possession of firearms, explosives, and other weapons on any University campus, with certain limited exceptions, including the lawful concealed carrying of handguns, as provided in [Kansas State University Weapons Policy](https://www.k-state.edu/police/weapons/index.html).  
 
-However, there may be many reasons why you cannot be in class on a given day, particularly with possible extra personal and academic stress and health concerns this semester.
-All course lectures will be recorded and available to enrolled students after class.
-If you miss a lecture, make sure to watch the recording and review the material before the next class session.
-Lab time is dedicated to working on your lab assignments and collaborating with your teammates on your project.
-If you miss a lab session, make sure to communicate with your team about how you can make up your contribution.
-Given the technologies we use in the course, this is straightforward to do asynchronously.
-If you know you're going to miss a lab session and you're feeling well enough to do so, notify your teammates ahead of time.
-Overall these policies are put in place to ensure communication between team members, respect for each others' time, and also to give you a safety net in the case of illness or other reasons that keep you away from attending class.
+You are encouraged to take the online [Weapons Policy Training](https://kstate.qualtrics.com/jfe/form/SV_6zkoPaeDI6g9Sdf) module to ensure you understand the requirements of the policy, including the requirements related to concealed carrying of handguns on campus. Students possessing a concealed handgun on campus must be 21 years of age or older and otherwise lawfully eligible to carry. All carrying requirements of the policy must be observed in this class, including but not limited to the requirement that a concealed handgun be completely hidden from view, securely held in a holster that meets the specifications of the policy, carried without a chambered round of ammunition, and that any external safety be in the “on” position.
+If an individual carries a concealed handgun in a personal carrier such as a backpack, purse, or handbag, the carrier must remain within the individual’s exclusive and uninterrupted control. This includes wearing the carrier with a strap, carrying or holding the carrier, or setting the carrier next to or within the immediate reach of the individual.
 
-### Attendance policy related to COVID symptoms, exposure, or infection
+Each individual who lawfully possesses a handgun on campus shall be wholly and solely responsible for carrying, storing and using that handgun in a safe manner and in accordance with the law, Board policy and University policy. All reports of suspected violation of the weapons policy are made to the University Police Department by picking up any Emergency Campus Phone or by calling 785-532-6412.
 
-Student health, safety, and well-being are the university's top priorities.
-To help ensure your well-being and the well-being of those around you, please do not come to class if you have symptoms related to COVID-19, have had a known exposure to COVID-19, or have tested positive for COVID-19.
-If any of these situations apply to you, you must follow university guidance related to the ongoing COVID-19 pandemic and current health and safety protocols.
-If you are experiencing any COVID-19 symptoms, contact student health at 919-681-9355.
-To keep the university community as safe and healthy as possible, you will be expected to follow these guidelines.
-Please reach out to me and your academic dean as soon as possible if you need to quarantine or isolate so that we can discuss arrangements for your continued participation in class.
 
-### Inclement weather policy
+### Campus Safety
 
-In the event of inclement weather or other connectivity-related events that prohibit class attendance, I will notify you how we will make up missed course content and work.
-This might entail holding the class on Zoom synchronously or watching a recording of the class.
+Kansas State University is committed to providing a safe teaching and learning environment for students and faculty members. To enhance your safety in the unlikely case of a campus emergency make sure that you know where and how to quickly exit your classroom and how to follow any emergency directives. Current Campus Emergency Information is available on the [University's Advisory](https://www.k-state.edu/advisories/) webpage.
 
-### Policy on video recording course content
 
-All lectures will be recorded and available on [Panopto](https://duke.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx#folderID=%22d6c1d58a-cb6d-4732-9d4b-ae0c011bf767%22), so students should not need to create their own recordings of lectures.
-If you feel that you need record the lectures yourself, you must get permission from me ahead of time and these recordings should be used for personal study only, no for distribution.
-The full policy on recording of lectures falls under the Duke University Policy on Intellectual Property Rights, available at [provost.duke.edu/sites/default/files/FHB_App_P.pdf](https://provost.duke.edu/sites/default/files/FHB_App_P.pdf).
-Unauthorized distribution is a cause for disciplinary action by the Judicial Board.
+### Student Resources
 
-## **Learning during a pandemic**
+K-State has many resources to help contribute to student success. These resources include accommodations for academics, paying for college, student life, health and safety, and others found at [Your Online Guide to Student Success](https://www.k-state.edu/onestop/).
 
-I want to make sure that you learn everything you were hoping to learn from this class.
-If this requires flexibility, please don't hesitate to ask.
 
--   You *never* owe me personal information about your health (mental or physical) but you're always welcome to talk to me.
-    If I can't help, I likely know someone who can.
+### Student Academic Creations
 
--   I want you to learn lots of things from this class, but I primarily want you to stay healthy, balanced, and grounded during this crisis.
+Student academic creations are subject to Kansas State University and Kansas Board of Regents Intellectual Property Policies. For courses in which students will be creating intellectual property, the K-State policy can be found at University Handbook, Appendix R: [Intellectual Property Policy and Institutional Procedures](https://www.k-state.edu/provost/universityhb/fhxr.html) (part I.E.). These policies address ownership and use of student academic creations.
 
-*Note:* If you've read this far in the syllabus, email me a picture of your pet if you have one or your favourite meme!
+### Mental Health
 
-## Important dates
+Your mental health and good relationships are vital to your overall well-being. Symptoms of mental health issues may include excessive sadness or worry, thoughts of death or self-harm, inability to concentrate, lack of motivation, or substance abuse. Although problems can occur anytime for anyone, you should pay extra attention to your mental health if you are feeling academic or financial stress, discrimination, or have experienced a traumatic event, such as loss of a friend or family member, sexual assault or other physical or emotional abuse.
+If you are struggling with these issues, do not wait to seek assistance.
 
--   **January 5:** Classes begin (Monday meeting schedule)
--   **January 6:** Regular class meeting schedule begins
--   **January 17:** Martin Luther King, Jr. Day holiday, no classes are held
--   **January 19:** Drop/add ends
--   **March 7-11:** Spring recess, no classes are held
--   **March 23**: Last day to withdraw with W
--   **April 20**: Classes end
--   **April 21-24**: Reading period
--   **April 25-30**: Final exams
+- [Kansas State University Counseling Services](https://www.k-state.edu/counseling/) offers free and confidential services to assist you to meet these challenges. 
 
-Click [here](https://registrar.duke.edu/spring-2022-academic-calendar) for the full Duke academic calendar.
+- [Lafene Health Center](https://www.k-state.edu/lafene) has specialized nurse practitioners to assist with mental health. 
+
+- [Office of Student Life](https://www.k-state.edu/studentlife/) can direct you to additional resources. 
+
+- [K-State Family Center](https://www.hhs.k-state.edu/familycenter/) offers individual, couple, and family counseling services on a sliding fee scale.
+
+- [Center for Advocacy, Response, and Education](https://www.k-state.edu/care/) (CARE) provides free and confidential assistance for those in our K-State community who have been victimized by violence.
+
+- K-State Online students have free access to mental health counseling with [TELUS Help Student Support](https://www.k-state.edu/lafene/well-being/telushealth/) - 24/7 support via chat and phone.
+
+- The [Division of Academic Success and Student Affairs](https://www.k-state.edu/academic-success-student-affairs/) can direct you to additional resources.
+
+
+### Unexcused Absences
+
+K-State has a University [Excused Absence Policy](https://www.k-state.edu/provost/universityhb/fhsecf.html) (Section F62). Class absence(s) will be handled between the instructor and the student unless there are other university offices involved. For university excused absences, instructors shall provide the student the opportunity to make up missed assignments, activities, and/or attendance specific points that contribute to the course grade, unless they decide to excuse those missed assignments from the student’s course grade. Please see the policy for a complete list of university excused absences and how to obtain one. Students are encouraged to contact their instructor regarding 

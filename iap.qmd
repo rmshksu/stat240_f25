@@ -1,0 +1,29 @@
+---
+title: "Interview a Pro"
+---
+
+Talk to someone who does research or uses statistics regularly as part of their job. They can be an academic, industry, or government professional. Ask them about their education in statistics, how they use statistics, and how they view statistics in relation to their profession. 
+
+Below are some questions that can be used to guide the discussion, but responses to these questions are not required to complete the assignment:
+
+- Can you tell me about your educational background? 
+
+- Do you have any formal education or training in statistics or quantitative science?
+
+- Do you think your education in statistics was sufficient or would you have benefitted from more/less?
+
+- How do you use statistics in your current role? 
+
+- Are there any particular statistical methods that you use very frequently or more than other?
+
+- Do you believe statistical thinking is valuable to your professions? Why/Why not?
+
+- What statistics background do you think new professionals in your field should have before entering the work force?
+
+Summarize the discussion, anything you learned from it, and anything you recognized from this course during the discussion in 4-8 sentences at most.
+
+
+
+
+
+
