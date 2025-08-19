@@ -1,13 +1,14 @@
 project:
   type: website
+  output-dir: .
 
 website:
   page-navigation: true
   title: "STAT 240 - Fall 2025"
   description: "Homepage for STAT 240 - Biometrics I at Kansas State University, Fall 2025."
-  site-url: "https://stat240_f25.github.io/website/"
+  site-url: "https://rmshksu.github.io/stat240_f25/"
 
-  repo-url: https://github.com/stat240_f25/website
+  repo-url: https://github.com/rmshksu/stat240_f25
   repo-actions: [edit, issue]
 
   open-graph: true
