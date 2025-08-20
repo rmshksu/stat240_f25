@@ -19,7 +19,7 @@ website:
     background: "#D1D1D190"
 
   sidebar:
-    background: "#51288860"
+    background: "#512888"
     logo: "images/logo.png"
     pinned: true
     align: center
