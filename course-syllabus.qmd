@@ -8,52 +8,57 @@ title: "Syllabus"
 
 This course will make use of both Canvas and an external course website built through [GitHub Pages](https://pages.github.com). The course can be completed without using the GitHub Pages, however using it is highly recommended.
 
-Credit Hours: 3
-Lecture: In-Person
-Class Meeting Days and Time: M/W/F 11:30 AM – 12:20 PM CST
+Credit Hours: 3 
+
+Lecture: In-Person 
+
+Class Meeting Days and Time: M/W/F 11:30 AM – 12:20 PM CST 
+
 Class Meeting Location: Dickens 207
 
-Instructor Information
-Name: Robert Sholl
-Email: rmsholl@ksu.edu
-Department: Statistics
-Office: Dickens 009C
-Office Hours: M/W 10:20 AM - 11:20 AM CST or by-appointment
 
+
+Instructor Information Name: Robert Sholl 
+
+Email: rmsholl\@ksu.edu 
+
+Department: Statistics 
+
+Office: Dickens 009C 
+
+Office Hours: M/W 10:20 AM - 11:20 AM CST or by-appointment
 
 ## Learning objectives
 
 By the end of this course, students will have a basic grasp of:
 
-- Graphical tools for data analysis
+-   Graphical tools for data analysis
 
-- Sampling methods for observational studies
+-   Sampling methods for observational studies
 
-- The design of experiments
+-   The design of experiments
 
-- Probability and distribution theory
+-   Probability and distribution theory
 
-- Simple linear regression
+-   Simple linear regression
 
-- Uncertainty quantification
+-   Uncertainty quantification
 
-- t-tests for statistical hypotheses
-
+-   t-tests for statistical hypotheses
 
 ## Prerequisites
 
-There are no mandatory prerequisites but the completion of high school algebra is strongly encouraged. 
+There are no mandatory prerequisites but the completion of high school algebra is strongly encouraged.
 
 ## Required Materials
 
-A calculator is required. Cell phone calculators are not allowed in the exams.
-The textbook for this class is provided for free.
+A calculator is required. Cell phone calculators are not allowed in the exams. The textbook for this class is provided for free.
 
 ## Expectations
 
 ### What you can expect of your instructor
 
-Assignments and exams will be graded within a week of completion. Per university requirements all coursework that students have completed, signed their name on, and received a grade for are the property of the student. If you would like the physical copy of your exam after it has been graded you can email me or speak to me directly. 
+Assignments and exams will be graded within a week of completion. Per university requirements all coursework that students have completed, signed their name on, and received a grade for are the property of the student. If you would like the physical copy of your exam after it has been graded you can email me or speak to me directly.
 
 This course is designed to encourage students to engage with their education without the fear of making mistakes. The pacing of assignments is such that students won’t have a strong assessment of their grades until after the first exam. As such I provide multiple opportunities throughout the semester to recover lost points.
 
@@ -69,69 +74,64 @@ K-State Online rules of style and [Netiquette Standards](https://online.k-state.
 
 ## Assignments
 
-
 ### Attendance and Participation
 
 Attendance and in-class participation are highly encouraged but not required. All relevant course content will be published on Canvas and the external course website. Lectures will only be recorded or held virtually in the event of extreme circumstances where class cannot be held in person. Extra credit may be given out periodically to students who are present in class.
 
-
 ### Unit Question Banks
 
-Each unit will have a question bank of 50 problems related to the unit. Prior to each unit’s exam you will be required to submit their answers to 10 problems of your choosing out of the relevant question bank. You are not required to show your work since no partial credit will be offered.
-You can turn in worked solutions to any problem from the bank after class or during office hours to receive feedback with no penalty.
+Each unit will have a question bank of 50 problems related to the unit. Prior to each unit’s exam you will be required to submit their answers to 10 problems of your choosing out of the relevant question bank. You are not required to show your work since no partial credit will be offered. You can turn in worked solutions to any problem from the bank after class or during office hours to receive feedback with no penalty.
 
-You can continue to complete problems beyond the initial 10 for extra credit towards that unit’s exam. You must show your work for all extra problems. Each additional problem correctly completed is 0.5 points extra out of the 100 each exam is worth.  
+You can continue to complete problems beyond the initial 10 for extra credit towards that unit’s exam. You must show your work for all extra problems. Each additional problem correctly completed is 0.5 points extra out of the 100 each exam is worth.
 
 ### Final Report
+
 You will be asked to complete one of the options below:
 
 A. Attend a scientific talk (on or off campus) then write a paper with the following:
 
-  -	2-3 sentences summarizing the talk.
-  
-  -	2-3 sentences about how you felt about the talk and the speaker.
-  
-  -	1-2 sentences describing anything you learned.
-  
-  -	1-2 sentences describing anything you didn’t understand or were unsure about.
-  
-  -	2-3 sentences either (a) describing any statistical methods that were used/mentioned or (b) describing any statistical methods that could be applicable to the topic discussed.
+-   2-3 sentences summarizing the talk.
 
+-   2-3 sentences about how you felt about the talk and the speaker.
+
+-   1-2 sentences describing anything you learned.
+
+-   1-2 sentences describing anything you didn’t understand or were unsure about.
+
+-   2-3 sentences either (a) describing any statistical methods that were used/mentioned or (b) describing any statistical methods that could be applicable to the topic discussed.
 
 B. Talk to someone who does research or uses statistics regularly as part of their job. They can be an academic, industry, or government professional. Ask them about their education in statistics, how they use statistics, and how they view statistics in relation to their profession. Summarize the discussion, anything you learned from it, and anything you recognized from this course during the discussion in 4-8 sentences at most.
 
 C. Using R programming, complete an analysis of either (a) pre-selected data provided in Canvas or (b) outside data you selected that has been approved by the instructor. The analysis should include:
 
-  -	All basic summary statistics discussed during the course.
-  -	At least two graphics from class.
-  -	A linear model or hypothesis test
+-   All basic summary statistics discussed during the course.
+-   At least two graphics from class.
+-   A linear model or hypothesis test
 
 Provide all your source code, with every line of code commented, and a brief statement about what can be concluded from the analysis.
 
 ### Exams
 
-Each unit will conclude with a comprehensive exam. Due to the nature of the course topic every exam is inherently comprehensive to previous units. All exams will be held in-class, you will have the full 50 minutes to complete the exam. 
+Each unit will conclude with a comprehensive exam. Due to the nature of the course topic every exam is inherently comprehensive to previous units. All exams will be held in-class, you will have the full 50 minutes to complete the exam.
 
 ### Grading
 
-The following grading distribution will be used: A= 90-100%, B=80-89%, C=70-79%, D=60-69%, F=59% and below.
-Grades will be assigned via the rubric below:
+The following grading distribution will be used: A= 90-100%, B=80-89%, C=70-79%, D=60-69%, F=59% and below. Grades will be assigned via the rubric below:
 
-| Item                  | Percentage   |
-|-----------------------|--------------|
-| Unit 1 Problems       | 10%          |
-| Unit 2 Problems       | 10%          |
-| Unit 3 Problems       | 10%          |
-| Final Report          | 10%          |
-| Exam  1               | 20%          |
-| Exam  2               | 20%          |
-| Exam  3               | 20%          |
-| Total                 | 100%         |
+| Item            | Percentage |
+|-----------------|------------|
+| Unit 1 Problems | 10%        |
+| Unit 2 Problems | 10%        |
+| Unit 3 Problems | 10%        |
+| Final Report    | 10%        |
+| Exam 1          | 20%        |
+| Exam 2          | 20%        |
+| Exam 3          | 20%        |
+| Total           | 100%       |
 
 ### Late or Missing Assignments
 
 There will be several assignments that are due by 11:59pm CST on the date listed. The purpose of these deadlines is to help you stay on track to complete all materials in a timely manner. If for any reason you are unable or fail to complete the assignment on time, please contact me as soon as possible so that we can make arrangements for the completion of the work.
-
 
 ## Technology
 
@@ -141,38 +141,37 @@ K-State has technology recommendations including a [Technology Recommendations](
 
 Other Technology Resources:
 
-- [Canvas](https://canvas.k-state.edu/info/help/)
+-   [Canvas](https://canvas.k-state.edu/info/help/)
 
-- [Office 365 Help and Support](http://www.k-state.edu/its/office365/help/index.html)
+-   [Office 365 Help and Support](http://www.k-state.edu/its/office365/help/index.html)
 
-- [Zoom](https://support.zoom.us/hc/en-us)
+-   [Zoom](https://support.zoom.us/hc/en-us)
 
-- [Media Studio](https://guides.lib.k-state.edu/innovation-lab/media-studio)
+-   [Media Studio](https://guides.lib.k-state.edu/innovation-lab/media-studio)
 
-- [K-State Libraries](http://www.lib.k-state.edu/)
+-   [K-State Libraries](http://www.lib.k-state.edu/)
 
 ## University Policies
 
-1. [Academic Honesty](https://www.k-state.edu/provost/resources/teaching/course.html#academichonesty)
+1.  [Academic Honesty](https://www.k-state.edu/provost/resources/teaching/course.html#academichonesty)
 
 Kansas State University has an Honor and Integrity System based on personal integrity to assure that one's work on all assignments, examinations, or other course work is performed honestly and without unauthorized assistance.
 
-2. [Students with Disabilities](https://www.k-state.edu/provost/resources/teaching/course.html#studentswithdisabilities)
+2.  [Students with Disabilities](https://www.k-state.edu/provost/resources/teaching/course.html#studentswithdisabilities)
 
 Students with disabilities who need classroom accommodations (such as administration of course exams with extended time and/or distraction reduced environment or providing an alternate format of text materials), access to technology, or information about emergency building/campus evacuation processes should contact the Student Access Center and/or their instructor.
 
-3. [Classroom Conduct](https://www.k-state.edu/provost/resources/teaching/course.html#classroomconduct)
+3.  [Classroom Conduct](https://www.k-state.edu/provost/resources/teaching/course.html#classroomconduct)
 
 All student activities in the University, including this course, are governed by the Student Judicial [Conduct Code](https://www.k-state.edu/sga/judicial/) as outlined in the Student Governing Association By Laws, Article V, Section 3, number 2. Students who engage in behavior that disrupts the learning environment may be asked to leave the class.
 
-4. [Mutual Respect and Inclusion](https://www.k-state.edu/provost/resources/teaching/course.html#mutualrespectandinclusion)
+4.  [Mutual Respect and Inclusion](https://www.k-state.edu/provost/resources/teaching/course.html#mutualrespectandinclusion)
 
 At K-State, faculty and staff are committed to creating and maintaining an inclusive and supportive learning environment for students from diverse backgrounds and perspectives. If you feel uncomfortable in this class or experience bias or discrimination, there are resources available to you.
 
-5. [Discrimination and Harassment](https://www.k-state.edu/provost/resources/teaching/course.html#discimination)
+5.  [Discrimination and Harassment](https://www.k-state.edu/provost/resources/teaching/course.html#discimination)
 
 Instructors also have a duty to report any behavior they become aware of that potentially violates the University’s policy prohibiting discrimination, harassment, and sexual harassment.
-
 
 ## Additional Policies
 
@@ -192,23 +191,19 @@ Moreover, academic freedom supports collaborative work in the pursuit of truth a
 
 ### Weapons Policy
 
-Kansas State University prohibits the possession of firearms, explosives, and other weapons on any University campus, with certain limited exceptions, including the lawful concealed carrying of handguns, as provided in [Kansas State University Weapons Policy](https://www.k-state.edu/police/weapons/index.html).  
+Kansas State University prohibits the possession of firearms, explosives, and other weapons on any University campus, with certain limited exceptions, including the lawful concealed carrying of handguns, as provided in [Kansas State University Weapons Policy](https://www.k-state.edu/police/weapons/index.html).
 
-You are encouraged to take the online [Weapons Policy Training](https://kstate.qualtrics.com/jfe/form/SV_6zkoPaeDI6g9Sdf) module to ensure you understand the requirements of the policy, including the requirements related to concealed carrying of handguns on campus. Students possessing a concealed handgun on campus must be 21 years of age or older and otherwise lawfully eligible to carry. All carrying requirements of the policy must be observed in this class, including but not limited to the requirement that a concealed handgun be completely hidden from view, securely held in a holster that meets the specifications of the policy, carried without a chambered round of ammunition, and that any external safety be in the “on” position.
-If an individual carries a concealed handgun in a personal carrier such as a backpack, purse, or handbag, the carrier must remain within the individual’s exclusive and uninterrupted control. This includes wearing the carrier with a strap, carrying or holding the carrier, or setting the carrier next to or within the immediate reach of the individual.
+You are encouraged to take the online [Weapons Policy Training](https://kstate.qualtrics.com/jfe/form/SV_6zkoPaeDI6g9Sdf) module to ensure you understand the requirements of the policy, including the requirements related to concealed carrying of handguns on campus. Students possessing a concealed handgun on campus must be 21 years of age or older and otherwise lawfully eligible to carry. All carrying requirements of the policy must be observed in this class, including but not limited to the requirement that a concealed handgun be completely hidden from view, securely held in a holster that meets the specifications of the policy, carried without a chambered round of ammunition, and that any external safety be in the “on” position. If an individual carries a concealed handgun in a personal carrier such as a backpack, purse, or handbag, the carrier must remain within the individual’s exclusive and uninterrupted control. This includes wearing the carrier with a strap, carrying or holding the carrier, or setting the carrier next to or within the immediate reach of the individual.
 
 Each individual who lawfully possesses a handgun on campus shall be wholly and solely responsible for carrying, storing and using that handgun in a safe manner and in accordance with the law, Board policy and University policy. All reports of suspected violation of the weapons policy are made to the University Police Department by picking up any Emergency Campus Phone or by calling 785-532-6412.
-
 
 ### Campus Safety
 
 Kansas State University is committed to providing a safe teaching and learning environment for students and faculty members. To enhance your safety in the unlikely case of a campus emergency make sure that you know where and how to quickly exit your classroom and how to follow any emergency directives. Current Campus Emergency Information is available on the [University's Advisory](https://www.k-state.edu/advisories/) webpage.
 
-
 ### Student Resources
 
 K-State has many resources to help contribute to student success. These resources include accommodations for academics, paying for college, student life, health and safety, and others found at [Your Online Guide to Student Success](https://www.k-state.edu/onestop/).
-
 
 ### Student Academic Creations
 
@@ -216,24 +211,22 @@ Student academic creations are subject to Kansas State University and Kansas Boa
 
 ### Mental Health
 
-Your mental health and good relationships are vital to your overall well-being. Symptoms of mental health issues may include excessive sadness or worry, thoughts of death or self-harm, inability to concentrate, lack of motivation, or substance abuse. Although problems can occur anytime for anyone, you should pay extra attention to your mental health if you are feeling academic or financial stress, discrimination, or have experienced a traumatic event, such as loss of a friend or family member, sexual assault or other physical or emotional abuse.
-If you are struggling with these issues, do not wait to seek assistance.
+Your mental health and good relationships are vital to your overall well-being. Symptoms of mental health issues may include excessive sadness or worry, thoughts of death or self-harm, inability to concentrate, lack of motivation, or substance abuse. Although problems can occur anytime for anyone, you should pay extra attention to your mental health if you are feeling academic or financial stress, discrimination, or have experienced a traumatic event, such as loss of a friend or family member, sexual assault or other physical or emotional abuse. If you are struggling with these issues, do not wait to seek assistance.
 
-- [Kansas State University Counseling Services](https://www.k-state.edu/counseling/) offers free and confidential services to assist you to meet these challenges. 
+-   [Kansas State University Counseling Services](https://www.k-state.edu/counseling/) offers free and confidential services to assist you to meet these challenges.
 
-- [Lafene Health Center](https://www.k-state.edu/lafene) has specialized nurse practitioners to assist with mental health. 
+-   [Lafene Health Center](https://www.k-state.edu/lafene) has specialized nurse practitioners to assist with mental health.
 
-- [Office of Student Life](https://www.k-state.edu/studentlife/) can direct you to additional resources. 
+-   [Office of Student Life](https://www.k-state.edu/studentlife/) can direct you to additional resources.
 
-- [K-State Family Center](https://www.hhs.k-state.edu/familycenter/) offers individual, couple, and family counseling services on a sliding fee scale.
+-   [K-State Family Center](https://www.hhs.k-state.edu/familycenter/) offers individual, couple, and family counseling services on a sliding fee scale.
 
-- [Center for Advocacy, Response, and Education](https://www.k-state.edu/care/) (CARE) provides free and confidential assistance for those in our K-State community who have been victimized by violence.
+-   [Center for Advocacy, Response, and Education](https://www.k-state.edu/care/) (CARE) provides free and confidential assistance for those in our K-State community who have been victimized by violence.
 
-- K-State Online students have free access to mental health counseling with [TELUS Help Student Support](https://www.k-state.edu/lafene/well-being/telushealth/) - 24/7 support via chat and phone.
+-   K-State Online students have free access to mental health counseling with [TELUS Help Student Support](https://www.k-state.edu/lafene/well-being/telushealth/) - 24/7 support via chat and phone.
 
-- The [Division of Academic Success and Student Affairs](https://www.k-state.edu/academic-success-student-affairs/) can direct you to additional resources.
-
+-   The [Division of Academic Success and Student Affairs](https://www.k-state.edu/academic-success-student-affairs/) can direct you to additional resources.
 
 ### Unexcused Absences
 
-K-State has a University [Excused Absence Policy](https://www.k-state.edu/provost/universityhb/fhsecf.html) (Section F62). Class absence(s) will be handled between the instructor and the student unless there are other university offices involved. For university excused absences, instructors shall provide the student the opportunity to make up missed assignments, activities, and/or attendance specific points that contribute to the course grade, unless they decide to excuse those missed assignments from the student’s course grade. Please see the policy for a complete list of university excused absences and how to obtain one. Students are encouraged to contact their instructor regarding 
+K-State has a University [Excused Absence Policy](https://www.k-state.edu/provost/universityhb/fhsecf.html) (Section F62). Class absence(s) will be handled between the instructor and the student unless there are other university offices involved. For university excused absences, instructors shall provide the student the opportunity to make up missed assignments, activities, and/or attendance specific points that contribute to the course grade, unless they decide to excuse those missed assignments from the student’s course grade. Please see the policy for a complete list of university excused absences and how to obtain one. Students are encouraged to contact their instructor regarding
