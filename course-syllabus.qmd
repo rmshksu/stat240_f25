@@ -18,7 +18,9 @@ Class Meeting Location: Dickens 207
 
 
 
-Instructor Information Name: Robert Sholl 
+Instructor Information 
+
+Name: Robert Sholl 
 
 Email: rmsholl\@ksu.edu 
 
