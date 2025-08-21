@@ -2,7 +2,7 @@
 title: "Statistics as a Language"
 subtitle: "STAT 240 - Fall 2025"
 author: "Robert Sholl"
-footer:  ""
+footer:  "[github.io/stat240_f25](https://rmshksu.github.io/stat240_f25/)"
 logo: "images/logo.jpg"
 format: 
   revealjs: 
