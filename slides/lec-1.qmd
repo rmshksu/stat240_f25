@@ -4,6 +4,7 @@ subtitle: "STAT 240 - Fall 2025"
 author: "Robert Sholl"
 footer:  "[github.io/stat240_f25](https://rmshksu.github.io/stat240_f25/)"
 logo: "images/logo.jpg"
+embed-resources: true
 format: 
   revealjs: 
     theme: slides.scss
@@ -66,8 +67,8 @@ library(countdown)
 students=read.csv("data/students_240_f25.csv")
 majors=as.data.frame(table(students$degreeProgram))
 levels=as.data.frame(table(students$classLevel))
-levels=data.frame(Var1=c("Freshmen","Sophomore","Junior","Senior"),
-                  Freq=c(9,11,16,8))
+levels=data.frame(Var1=c("High School","Freshmen","Sophomore","Junior","Senior"),
+                  Freq=c(1,9,10,16,10))
 par(mar = c(5, 10, 4, 2))
 barplot(majors$Freq,
         names.arg = majors$Var1,
@@ -127,7 +128,7 @@ barplot(levels$Freq,
 - **Will we use computer programs like Excel or Python?**
   - I'll use R, you're welcome to try it, but the class is taught using "paper and pencil" mathematics
 - **Is there a required textbook?**
-  - "Yes", but it's free. You can find it in Canvas or the course website
+  - Yes -- it's free. You can find it in Canvas or the course website
 :::
 
 
