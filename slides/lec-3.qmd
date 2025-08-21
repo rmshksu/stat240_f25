@@ -14,6 +14,764 @@ execute:
   freeze: auto
 ---
 
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+    cancel: ["Extension","cancel"],
+    bcancel: ["Extension","cancel"],
+    xcancel: ["Extension","cancel"],
+    cancelto: ["Extension","cancel"]
+  });
+});
+</script>
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+water=read.csv("data/AGW011.csv")
+water[water=="na"] <- NA
+npk_water=water[,c(1:9,13,26)]
+tmp_water=na.omit(npk_water)
+tmp_water[tmp_water=="bdl"] <- 0
+table(tmp_water$Location)
+water_l1=subset(tmp_water,tmp_water$Location=="4-6Eis1")
+water_l2=subset(tmp_water,tmp_water$Location=="4-6Eis2")
+water_l3=subset(tmp_water,tmp_water$Location=="3-5Mor")
+water_l4=subset(tmp_water,tmp_water$Location=="4-6 Mor")
+water1=subset(water_l1,water_l1$Recyear>1995 & water_l1$RECTYPE<1998)
+```
+
+# Math Review
+
+## Rules
+
+::: incremental
+
+1. **Commutative rule**
+   - Order doesn’t matter  
+
+<span style="display:block; height:0.5em;"></span>
+
+2. **Associative rule**
+   - Order still doesn’t matter  
+
+<span style="display:block; height:0.5em;"></span>
+
+3. **Distributive rule**
+   - Order matters sometimes
+
+:::
+
+## Commutative Rule
+
+>When two terms are added$^1$, order does not matter
+
+$$(a + b) = (b + a)$$
+
+<span style="display:block; height:0.5em;"></span>
+
+>When two terms are multiplied$^2$, order does not matter
+
+$$(a \times b) = (b \times a)$$
+
+<span style="display:block; height:0.5em;"></span>
+
+
+:::{.small}
+
+$^1$ subtraction is just negative addition
+
+$^2$ division is just fraction multiplication
+
+:::
+
+
+## Quick note
+
+**Subtraction is addition**
+
+$$
+\begin{aligned}
+a - b =  a + (-b) \\
+\\
+10 - 5 = 5 \\ 
+\\
+10 + (-5) = 5 \\ 
+\\
+10 - 5 =  10+(-5) \\
+\end{aligned}
+$$
+
+## Quick note
+
+**Division is multiplication**
+
+$$
+\begin{aligned}
+a/b=  a\times 1/b \\
+\\
+10/5=  2 \\
+\\
+10 \times 1/5=  2\\
+\\
+10/5=  10 \times 1/5
+\end{aligned}
+$$
+
+
+## Associative Rule
+
+>When $\ge 3$ terms are added, order does not matter
+
+$$a+(b+c)=(a+b)+c $$
+
+<span style="display:block; height:0.5em;"></span>
+
+>When $\ge 3$ terms are multiplied, order does not matter
+
+$$a \times (b \times c) = (a \times b) \times c$$
+
+## Distributive Rule
+
+>When a term is multiplied over the addition of two terms, the result is an output equal to the sum of their individual products with the first term
+
+$$
+\begin{aligned}
+a \times (b+c) = (a \times b) + (a \times c) \\ 
+\\
+5 \times(10+2)=5 \times 12=60\\
+\\
+(5 \times 10) + (5 \times 2) = 50 + 10 = 60
+\end{aligned}
+$$
+
+## PEMDAS
+
+::: incremental
+
+1. Parentheses
+
+<span style="display:block; height:0.5em;"></span>
+
+2. Exponents
+
+<span style="display:block; height:0.5em;"></span>
+
+3. Multiplication and Division
+
+<span style="display:block; height:0.5em;"></span>
+
+4. Addition and Subtraction
+
+:::
+
+## Basic Exponent Properties
+
+$$
+\begin{aligned}
+& a^m \times a^n= a^{m+n} \\
+& \frac{a^m}{a^n}=a^{m-n}\\
+& a^0=1\\
+& a^{-m}=\frac{1}{a^m}\\
+& (a^m)^n=a^{m\times n}\\
+& (ab)^m=a^m\times b^m \\
+& \left(\frac{a}{b} \right)^m=\frac{a^m}{b^m}
+\end{aligned}
+$$
+
+## Logarithms
+
+$$
+\begin{aligned}
+10^3& =1000 \\
+\log_{10}(1000)& =3 \\
+\\
+a^b& =c \\
+\log_a(c)& =b \\
+\\
+\log_a(xy)& =\log_a(x)+\log_a(y)\\
+\log_a(x/y)& =\log_a(x)-\log_a(y)\\
+\log_a(x^y)& =y\log_a(x)
+\end{aligned}
+$$
+
+## Equalities
+
+$$
+\begin{array}{|c|c|}
+\hline
+= & \text{Is equal to}\\
+\hline
+\equiv & \text{Is defined as}\\
+\hline
+\approx & \text{Is approximately}\\
+\hline
+< & \text{Is less than}\\
+\hline
+> & \text{Is greater than}\\
+\hline
+\le & \text{Is less than or equal to} \\
+\hline
+\ge & \text{Is greater than or equal to}\\
+\hline
+\end{array}
+$$
+
+
+
+## Some Definitions
+
+$$
+\begin{aligned}
+\pi \approx 3.14 \\
+\\
+\tau = 2\pi \\
+\\
+e \approx 2.718 \\
+\\
+\log = \log_{10}\\
+\\
+\ln = \log_e \\
+\end{aligned}
+$$
+
+## Univariate Solutions
+
+$$
+\begin{aligned}
+15=0.5x+10\\
+5=0.5x\\
+2.5=x\\
+\end{aligned}
+$$
+
+<span style="display:block; height:0.5em;"></span>
+
+$$
+\begin{aligned}
+22=e^x+2\\
+20=e^x\\
+\log(20)=x\\
+\end{aligned}
+$$
+
+# Notation
+
+We're doing Greek letters now
+
+## Denoting Data
+
+$$
+\begin{array}{|c|c|}
+\hline
+n & \text{Sample size} \\
+\hline
+N & \text{Population size} \\
+\hline
+x, \ y, \ z & \text{(conventionally) Data} \\
+\hline
+i,\ j & \text{Indices} \\
+\hline
+x_i, \ y_j & \text{Indexed data} \\ 
+\hline
+\text{Lowercase Greek letters} & \text{Population parameters} \\
+\hline
+\text{Lowercase Arabic letters} & \text{Sample statistics} \\
+\hline
+\end{array}
+$$
+
+## Summation
+
+::: incremental
+
+- Statisticians are mathematicians
+
+<span style="display:block; height:0.3em;"></span>
+
+- Mathematicians like to generalize and simplify
+
+    - Because we're very lazy
+    
+<span style="display:block; height:0.3em;"></span>
+
+- Add all of the whole numbers from $1$ to $10$ together
+
+- $1+2+3+4+5+6+7+8+9+10=55$
+
+<span style="display:block; height:0.3em;"></span>
+
+- Inconvenient to write and say
+
+:::
+
+## Summation
+
+:::{.small}
+
+Consider a single "variable", $x_i$, where $x_1=1, x_2=2, ... , x_{10}=10$
+
+:::
+
+$$
+\begin{aligned}
+& \sum_{i=1}^{10}x_i=1+2+3+4+5+6+7+8+9+10\\
+\\
+& \sum_{i=1}^{10}x_i=55\\
+\end{aligned}
+$$
+
+::: incremental
+
+- Convenient to write and say
+
+:::
+
+## Notes/Warnings
+
+::: {.small}
+
+::: incremental
+
+- "In the rabbit hole"
+
+    - I'll eventually slip up with vocabulary
+    
+<span style="display:block; height:0.3em;"></span>
+    
+- If I say "vector" I mean a line of numbers (column/row in Excel/Google Sheets)
+
+- If I say "matrix" I mean a box of numbers (a table)
+
+- If I use any term related to calculus, it's not necessary knowledge, it's an aside
+
+<span style="display:block; height:0.3em;"></span>
+
+- If you're confused by a vocab term, raise your hand
+
+    - $50/50$ I'm just going crazy
+
+    - $100\%$ chance you aren't alone
+
+:::
+
+:::
+
 # Measures of Center
 
+## Motivation
 
+::: incremental
+
+- The brick they use to build everything in this town
+
+    - It's in my water
+
+- "Ogden Limestone"
+    
+- Kansas doesn't want random stuff in the water
+
+- Potassium is a good indicator for this limestone
+
+- How can we determine if the problem is getting worse?
+
+:::
+
+## Motivation
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE, fig.align='center'}
+hist(as.numeric(water1$K1),col="#92BBBD90",xlab="Potassium (mg/L)",main="Watershed Potassium Levels (1996-1997)")
+```
+
+## Mean
+
+$$\bar x = \frac{1}{n}\sum_{i=1}^nx_i$$
+
+$$\mu = \frac{1}{N}\sum_{i=1}^n x_i$$
+
+::: incremental
+
+- "Average"
+
+- Most common measure of center
+
+- Take all the values in the data, add them up, divide by the number of data points
+
+:::
+
+## Mean
+
+:::{.small}
+
+$$
+\begin{array}{|c|c|c|c|c|}
+\hline
+1.92 & 1.4 & 1.45 & 1.25 & 1.23 \\
+\hline
+\end{array}
+$$
+
+$$
+\begin{aligned}
+& \bar x = \frac{1}{n}\sum_{i=1}^nx_i\\
+\\
+& \bar x = \frac{1}{5}(1.92 + 1.4 + 1.45 + 1.25 + 1.23)\\
+\\
+& \bar x = \frac{1}{5}(7.25)\\
+\\
+& \bar x = 1.45\\
+\end{aligned}
+$$
+
+:::
+
+## Resistance
+
+$$
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+1.92 & 1.4 & 1.45 & 1.25 & 1.23 & \boldsymbol{6.52}\\
+\hline
+\end{array}
+$$
+
+$$\bar x = \frac{1}{6}(7.25+6.52)=2.295$$
+
+<span style="display:block; height:0.5em;"></span>
+
+$$
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+1.92 & 1.4 & 1.45 & 1.25 & 1.23 & \boldsymbol{0.01}\\
+\hline
+\end{array}
+$$
+
+$$\bar x = \frac{1}{6}(7.25+0.01)=1.208$$
+
+## Resistance
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE, fig.align='center'}
+hist(as.numeric(water1$K1),col="#92BBBD90",xlab="Potassium (mg/L)",main="Watershed Potassium Levels (1996-1997)")
+abline(v=mean(as.numeric(water1$K1)),col="#87755C",lwd=3,lty=2)
+text(1.2,6,"Mean",col="#87755C",cex=1.4)
+```
+
+## Median
+
+$$
+\begin{array}{|c|c|c|c|c|}
+\hline
+1.92 & 1.4 & 1.45 & 1.25 & 1.23 \\
+\hline
+\end{array}
+$$
+
+::: incremental
+
+- The simplest measure of center
+
+- "True" center or middle value
+
+- Organize data from *lowest* to *highest* value
+
+    - If $n$ is odd: Choose position ${(n+1)\over2}$ in the ordered data set
+
+    - If $n$ is even: Pick $n\over 2$ and ${n \over 2}+1$ and average the two data points
+
+:::
+
+## Derivation
+
+$$
+\begin{array}{|c|c|c|c|c|}
+\hline
+1.23 & 1.25 & 1.4 & 1.45 & 1.92 \\
+\hline
+\end{array}
+$$
+
+
+
+<span style="display:block; height:0.5em;"></span>
+
+
+$$
+\frac{5+1}{2}=\frac{6}{2}=3
+$$
+
+## Derivation
+
+$$
+\begin{array}{|c|c|c|c|c|}
+\hline
+1.23 & 1.25 & \boldsymbol{1.4} & 1.45 & 1.92 \\
+\hline
+\end{array}
+$$
+
+
+
+<span style="display:block; height:0.5em;"></span>
+
+
+$$
+\frac{5+1}{2}=\frac{6}{2}=3
+$$
+
+<span style="display:block; height:0.5em;"></span>
+
+$$\text{Median} = 1.4$$
+
+## Derivation
+
+$$
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+1.23 & 1.25 & 1.4 & 1.45 & 1.92 & 6.52\\
+\hline
+\end{array}
+$$
+
+
+<span style="display:block; height:0.5em;"></span>
+
+$$\frac{6}{2}=3 \quad \& \quad \frac{6}{2}+1=4$$
+
+## Derivation
+
+$$
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+1.23 & 1.25 & \boldsymbol{1.4} & \boldsymbol{1.45} & 1.92 & 6.52\\
+\hline
+\end{array}
+$$
+
+
+<span style="display:block; height:0.5em;"></span>
+
+$$\frac{6}{2}=3 \quad \& \quad \frac{6}{2}+1=4$$
+
+<span style="display:block; height:0.5em;"></span>
+
+$$\text{Median}=\frac{1.4+1.45}{2}=1.425$$
+
+## Elimination
+
+$$
+\begin{array}{|c|c|c|c|c|}
+\hline
+1.23 & 1.25 & 1.4 & 1.45 & 1.92 \\
+\hline
+\end{array}
+$$
+
+## Elimination
+
+$$
+\begin{array}{|c|c|c|c|c|}
+\hline
+\xcancel{1.23} & 1.25 & 1.4 & 1.45 & \xcancel{1.92} \\
+\hline
+\end{array}
+$$
+
+## Elimination
+
+$$
+\begin{array}{|c|c|c|c|c|}
+\hline
+\xcancel{1.23} & \xcancel{1.25} & 1.4 & \xcancel{1.45} & \xcancel{1.92} \\
+\hline
+\end{array}
+$$
+
+## Elimination
+
+$$
+\begin{array}{|c|c|c|c|c|}
+\hline
+\xcancel{1.23} & \xcancel{1.25} & \boldsymbol{1.4} & \xcancel{1.45} & \xcancel{1.92} \\
+\hline
+\end{array}
+$$
+
+$$\text{Median}=1.4$$
+
+## Elimination
+
+$$
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+1.23 & 1.25 & 1.4 & 1.45 & 1.92 & 6.52\\
+\hline
+\end{array}
+$$
+
+$$
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+1.23 & 1.25 & 1.4 & 1.45 & 1.92 & 0.01\\
+\hline
+\end{array}
+$$
+
+## Elimination
+
+$$
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+\xcancel{1.23} & 1.25 & 1.4 & 1.45 & 1.92 & \xcancel{6.52}\\
+\hline
+\end{array}
+$$
+
+$$
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+\xcancel{1.23} & 1.25 & 1.4 & 1.45 & 1.92 & \xcancel{0.01}\\
+\hline
+\end{array}
+$$
+
+## Elimination
+
+$$
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+\xcancel{1.23} & \xcancel{1.25} & 1.4 & 1.45 & \xcancel{1.92} & \xcancel{6.52}\\
+\hline
+\end{array}
+$$
+
+$$
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+\xcancel{1.23} & \xcancel{1.25} & 1.4 & 1.45 & \xcancel{1.92} & \xcancel{0.01}\\
+\hline
+\end{array}
+$$
+
+## Elimination
+
+$$
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+\xcancel{1.23} & \xcancel{1.25} & \boldsymbol{1.4} & \boldsymbol{1.45} & \xcancel{1.92} & \xcancel{6.52}\\
+\hline
+\end{array}
+$$
+
+$$
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+\xcancel{1.23} & \xcancel{1.25} & \boldsymbol{1.4} & \boldsymbol{1.45} & \xcancel{1.92} & \xcancel{0.01}\\
+\hline
+\end{array}
+$$
+
+<span style="display:block; height:0.5em;"></span>
+
+$$\text{Median}=\frac{1.4+1.45}{2}=1.425$$
+
+## Skewness
+
+```{r,echo=FALSE,fig.align='center'}
+data=c(1,2,2.5,3,3,3.5,3.5,3.5,4,4.5,5,5,5.5,5.5)
+par(mar=c(1,0,4,0))
+hist(data,breaks=4,xlim=c(0,7),xaxt="n",yaxt="n",
+     xlab="n",ylab="n",main="Symmetric: Mean = Median",col="#51288880")
+
+abline(v=median(data),col="#512888",lwd=5,lty=2)
+text(2.15,3.5,"Mean",cex=2,col="cyan3")
+text(5,3.5,"Median",cex=2,col="red4")
+```
+
+## Skewness
+
+```{r,echo=FALSE,fig.align='center'}
+data=c(1,1,2,2.5,2.5,2.5,3,3,3.5,3.5,4,5,5,5.5)
+par(mar=c(1,0,4,0))
+hist(data,breaks=4,xlim=c(0,7),xaxt="n",yaxt="n",
+     xlab="n",ylab="n",main="Positively Skewed: Mean > Median",col="#51288880")
+abline(v=mean(data),col="cyan3",lwd=5,lty=2)
+abline(v=median(data),col="red4",lwd=5,lty=2)
+text(4,4,"Mean",cex=2,col="cyan3")
+text(1,4,"Median",cex=2,col="red4")
+```
+
+## Skewness
+
+```{r,echo=FALSE,fig.align='center'}
+data=c(1,2.5,3,3.5,3.5,4,4.5,5,5,5,5,5.5,5.5,5.5)
+par(mar=c(1,0,4,0))
+hist(data,breaks=4,xlim=c(0,7),xaxt="n",yaxt="n",
+     xlab="n",ylab="n",main="Negatively Skewed: Mean < Median",col="#51288880")
+abline(v=mean(data),col="cyan3",lwd=5,lty=2)
+abline(v=median(data),col="red4",lwd=5,lty=2)
+text(3.15,4,"Mean",cex=2,col="cyan3")
+text(6,4,"Median",cex=2,col="red4")
+```
+
+## Frequency
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE, fig.align='center'}
+hist(as.numeric(water1$K1),col="#92BBBD90",xlab="Potassium (mg/L)",main="Watershed Potassium Levels (1996-1997)")
+abline(v=mean(as.numeric(water1$K1)),col="#87755C",lwd=3,lty=2)
+abline(v=median(as.numeric(water1$K1)),col="#445B30",lwd=3,lty=2)
+legend("topright", 
+  legend = c("Mean", "Median"), 
+  col = c("#87755C","#445B30"),
+  lty=1,lwd=3,
+  cex = 1.2, 
+  text.col = "black", 
+  horiz = F , 
+  inset = c(0.1, 0.1))
+```
+
+## Frequency
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE, fig.align='center'}
+hist(as.numeric(water1$K1),col="#92BBBD90",xlab="Potassium (mg/L)",main="Watershed Potassium Levels (1996-1997)")
+abline(v=mean(as.numeric(water1$K1)),col="#87755C",lwd=3,lty=2)
+abline(v=median(as.numeric(water1$K1)),col="#445B30",lwd=3,lty=2)
+legend("topright", 
+  legend = c("Mean", "Median"), 
+  col = c("#87755C","#445B30"),
+  lty=1,lwd=3,
+  cex = 1.2, 
+  text.col = "black", 
+  horiz = F , 
+  inset = c(0.1, 0.1))
+arrows(0.92,12,1.045,8,lwd=3,col="#1E3618")
+```
+
+## Mode
+
+$$
+\begin{array}{|c|c|c|c|c|}
+\hline
+\boldsymbol{3} & \boldsymbol{3} & 5 & 7 & 12 \\
+\hline
+\end{array}
+$$
+
+::: incremental
+
+- Most frequent observation
+
+- Resistant
+
+- Not always very informative
+
+- Easy to skew in a few cases
+
+- Imagine a homogeneous data set
+
+:::
+
+## Mode
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE, fig.align='center'}
+set.seed(73)
+hist(runif(100000,1,5),xlab="",main="",col="#D4D2C6")
+```
