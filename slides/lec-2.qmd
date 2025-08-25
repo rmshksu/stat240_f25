@@ -40,9 +40,7 @@ extreme=subset(tsunami,tsunami$magnitude>8)
 ## The Scientific Method
 
 ::: incremental
-
-- Where does statistics come into the picture?
-
+-   Where does statistics come into the picture?
 :::
 
 $$
@@ -66,75 +64,65 @@ $$
 ## Observe and Question
 
 ::: incremental
+-   Tsunamis can occur after earthquakes
 
-- Tsunamis can occur after earthquakes
+-   They tend to happen after high magnitude earthquakes
 
-- They tend to happen after high magnitude earthquakes
+-   *How high magnitude does an earthquake have to be to cause a tsunami?*
 
-- *How high magnitude does an earthquake have to be to cause a tsunami?*
-
-- *How high are the tsunami waves from high magnitude earthquakes?*
-
+-   *How high are the tsunami waves from high magnitude earthquakes?*
 :::
 
 ## Hypothesize
 
-::: {.small}
->"On 30 July 2025, at 11:24:52 PETT (23:24:52 UTC, 29 July), a $M_w$ 8.8 megathrust earthquake struck off the eastern coast of the Kamchatka Peninsula in the Russian Far East, 119 km (74 mi) east-southeast of the coastal city of Petropavlovsk-Kamchatsky." -- [Wikipedia](https://en.wikipedia.org/wiki/2025_Kamchatka_Peninsula_earthquake)
+::: small
+> "On 30 July 2025, at 11:24:52 PETT (23:24:52 UTC, 29 July), a $M_w$ 8.8 megathrust earthquake struck off the eastern coast of the Kamchatka Peninsula in the Russian Far East, 119 km (74 mi) east-southeast of the coastal city of Petropavlovsk-Kamchatsky." -- [Wikipedia](https://en.wikipedia.org/wiki/2025_Kamchatka_Peninsula_earthquake)
 :::
 
 ::: incremental
+-   This earthquake was well above the severity to cause a tsunami
 
-- This earthquake was well above the severity to cause a tsunami
-
-- Higher magnitude earthquakes result in tsunamis with high waves
-
+-   Higher magnitude earthquakes result in tsunamis with high waves
 :::
 
 ## Experiment
 
 ::: incremental
+-   We can't experiment well with this kind of science
 
-- We can't experiment well with this kind of science
+-   But we can run a sort of "psuedo"-experiment
 
-- But we can run a sort of "psuedo"-experiment
+-   We select $100$ tsunamis at random and see if they were the product of an earthquake
 
-- We select $100$ tsunamis at random and see if they were the product of an earthquake
-
-- We find out that $68$ of them had some connection to a earthquake
-
+-   We find out that $68$ of them had some connection to a earthquake
 :::
 
 ## Vocabulary (Get used to it)
 
 ::: incremental
-
 -   **Population:** the *entire collection* of individuals about which information is sought.
 
 -   **Sample:** a *subset* of population, containing the individuals that are actually observed.
 
 -   **Statistics:** is the study of procedures for collecting, describing, and drawing conclusions from information.
 
-    -  the science of describing or making inferences about a population, from a sample.
-
+    -   the science of describing or making inferences about a population, from a sample.
 :::
 
 ## Analyze
 
->Of the 748 tsunamis that have occurred since 1970, 464 of them can be directly associated with an earthquake.
+> Of the 748 tsunamis that have occurred since 1970, 464 of them can be directly associated with an earthquake.
 
 ::: incremental
+-   From this data we can say two things
 
-- From this data we can say two things
+-   $62\%$ of tsunamis are caused by earthquakes
 
-- $62\%$ of tsunamis are caused by earthquakes
+-   $68\%$ of the tsunamis in our sample were caused by earthquakes
 
-- $68\%$ of the tsunamis in our sample were caused by earthquakes
+    -   **Parameter:** a value that describes an entire population.
 
-  - **Parameter:** a value that describes an entire population.
-  
-  - **Statistic:** a value that describes a sample.
-
+    -   **Statistic:** a value that describes a sample.
 :::
 
 # Sampling Techniques
@@ -143,96 +131,84 @@ I hope you're hungry
 
 ## Simple Random Sampling
 
->How clean are the campus dining halls? Let's find out!
+> How clean are the campus dining halls? Let's find out!
 
 ::: incremental
+-   We decide to line up all of the dining hall workers at Kramer
 
-- We decide to line up all of the dining hall workers at Kramer
+-   Everyone is assigned a number, $1$ to $50$
 
-- Everyone is assigned a number, $1$ to $50$
+-   We randomly select $10$ numbers
 
-- We randomly select $10$ numbers 
-
-- Then swab the hands of every person who's number came up
-
+-   Then swab the hands of every person who's number came up
 :::
 
 ## Simple Random Sampling
 
 ::: incremental
+-   **Simple Random Sample (SRS):** a sample chosen by a method in which collection of n population items is equally likely to make up the sample.
 
-- **Simple Random Sample (SRS):** a sample chosen by a method in which collection of n population items is equally likely to make up the sample.
+-   Every worker had the same chance of being selected
 
-- Every worker had the same chance of being selected
+    -   $1/50$
 
-  - $1/50$
-  
-  - Note: this only works if we select all $10$ numbers simultaneously
-  
-  - We'll play with that concept more later on
+    -   Note: this only works if we select all $10$ numbers simultaneously
 
+    -   We'll play with that concept more later on
 :::
 
 ## Stratified Sampling
 
->Maybe the $10$ workers we selected all work the same station together. How can we make sure we get a sample from every station?
+> Maybe the $10$ workers we selected all work the same station together. How can we make sure we get a sample from every station?
 
 ::: incremental
+-   Divide up workers by station, $5$ in total
 
-- Divide up workers by station, $5$ in total
+-   Assign each group of workers numbers $1$ through $10$
 
-- Assign each group of workers numbers $1$ through $10$ 
+-   Randomly select $2$ numbers
 
-- Randomly select $2$ numbers
-
-- Swab the hands of each of those numbers from each group
-
+-   Swab the hands of each of those numbers from each group
 :::
 
 ## Statified Sampling
 
 ::: incremental
-
 -   **Stratified Sample:** The population is divided into groups, called **strata**, where the members of each *stratum* are similar in some way. Then a SRS is drawn from each stratum.
 
-- We *stratified* by station
+-   We *stratified* by station
 
-- We defined a SRS for the *strata*
+-   We defined a SRS for the *strata*
 
-- We sampled from the strata based off of that SRS
-
+-   We sampled from the strata based off of that SRS
 :::
 
 ## Cluster Sampling
 
->Foodborne outbreaks can also happen as a result of contaminated regions, not just bad worker hygeine. 
+> Foodborne outbreaks can also happen as a result of contaminated regions, not just bad worker hygeine.
 
 ::: incremental
+-   We split the dining center up into a grid of 5 ft by 5 ft squares
 
-- We split the dining center up into a grid of 5 ft by 5 ft squares
+-   We select $10$ squares at random and swab the entire square
 
-- We select $10$ squares at random and swab the entire square
+-   Each of these squares are called *clusters*
 
-- Each of these squares are called *clusters*
-
-- **Cluster Sampling:** Items are drawn from the population in groups, or clusters.
-
+-   **Cluster Sampling:** Items are drawn from the population in groups, or clusters.
 :::
 
 ## Systematic Sampling
 
->At the end of the day, the delivery mechanism of foodborne illness is the food itself. 
+> At the end of the day, the delivery mechanism of foodborne illness is the food itself.
 
 ::: incremental
+-   We decide to sample the food coming off the line directly
 
-- We decide to sample the food coming off the line directly
+-   It'd be a massive interruption of service to sample every food item coming out
 
-- It'd be a massive interruption of service to sample every food item coming out
+    -   Plus, we can't serve food once we've sampled it
 
-  - Plus, we can't serve food once we've sampled it
-  
-- So we decide to sample every $10^{th}$ item that comes from any station for possible contaminants
-
+-   So we decide to sample every $10^{th}$ item that comes from any station for possible contaminants
 :::
 
 ## Systematic Sampling
@@ -240,66 +216,56 @@ I hope you're hungry
 <br>
 
 ::: incremental
+-   Define a number, denoted $k$
 
-- Define a number, denoted $k$
+-   Sample the $k^{th}$ item that's observed
 
-- Sample the $k^{th}$ item that's observed 
-
-- Repeat the sampling process every $k$ items that are observed
-
+-   Repeat the sampling process every $k$ items that are observed
 :::
 
 ## Voluntary Response
 
 ::: incremental
+-   We design a simple survey that asks the students:
 
-- We design a simple survey that asks the students:
+    -   On a scale of 1 to 10 how clean does Kramer dining center appear?
 
-  - On a scale of 1 to 10 how clean does Kramer dining center appear?
-  
-  - Have you ever felt sick after eating at the dining center?
-  
-  - Do you think the dining center prioritizes food safety adequately?
-  
-- We send the survey to every student that's eaten at Kramer in the past year
+    -   Have you ever felt sick after eating at the dining center?
 
+    -   Do you think the dining center prioritizes food safety adequately?
+
+-   We send the survey to every student that's eaten at Kramer in the past year
 :::
 
 ## Samples of Convenience
 
 ::: incremental
+-   How does the class feel about Kramer on a scale of 1 to 10?
 
-- How does the class feel about Kramer on a scale of 1 to 10?
+-   It an easy sample to acquire, we just used who we had
 
-- It an easy sample to acquire, we just used who we had
+-   It's a terrible sampling technique in general
 
-- It's a terrible sampling technique in general
-
-- Why?
-
+-   Why?
 :::
 
 # Data Types
 
 ## Data
 
->What is data?
+> What is data?
 
 ::: incremental
-
 -   **Data:** Information that has been collected
 
 -   **Individual:** *Something* the information has been collected on (People/Places/Things/etc.)
 
 -   **Variables:** Characteristics about the **individuals** we collected information (**data**) from
-
-
 :::
 
 ## Variables
 
 ::: {style="font-size: 0.8em;"}
-
 $$
 \scriptsize
 \begin{array}{|c|c|c|c|c|c|}
@@ -314,17 +280,14 @@ $$
 \hline
 \end{array}
 $$
-
 :::
 
 ::: incremental
+-   Not all variables are held equal
 
-- Not all variables are held equal
+-   What's the difference between column 1 and column 2?
 
-- What's the difference between column 1 and column 2?
-
-  - What about 3 and 4?
-
+    -   What about 3 and 4?
 :::
 
 ## Categorical Variables
@@ -332,19 +295,16 @@ $$
 **Qualitative (Categorical) variable:** The value of the variable represents a *descriptive categories*
 
 ::: incremental
-
 -   Identifying labels or names
 
 -   We can't really do math with a label or name
 
 -   "Male" $= 0$, "Female" $= 1$
-
 :::
 
 ## Categorical Variables
 
 ::: incremental
-
 -   **Ordinal variables:** Categories/values of the variable have a natural ordering
 
     -   Letter grade: A, B, C, D, F
@@ -356,7 +316,6 @@ $$
     -   Degree program
 
     -   Sex: Male / Female
-    
 :::
 
 ## Numeric Variables
@@ -364,19 +323,16 @@ $$
 **Quantitative variable:** The value of the variable represents a *meaningful number*
 
 ::: incremental
-
 -   Body mass, age, height, time
 
 -   We can inherently do math with these
 
--   Can still be problematic due to *units* 
-
+-   Can still be problematic due to *units*
 :::
 
 ## Numeric Variables
 
 ::: incremental
-
 -   **Discrete variable:** A countable number of values (0, 1, 2, 3, 4, ...)
 
     -   Population size of fish in a pond
@@ -390,44 +346,38 @@ $$
     -   Volume of liquid in a glass
 
     -   Body Mass
-
 :::
 
 ## Numeric Variables
 
-
 ::: incremental
+-   **Interval** level
 
-- **Interval** level
+    -   Differences between values make sense
 
-  -   Differences between values make sense
-  
-  -   Ratios don't make sense because **zero has no meaning**
+    -   Ratios don't make sense because **zero has no meaning**
 
-- **Ratio** level
+-   **Ratio** level
 
-  -   Differences between values make sense
-  
-  -   Ratios **also make sense**
-  
-  -   Zero **has meaning**, it represents absence of the quantity
+    -   Differences between values make sense
 
+    -   Ratios **also make sense**
+
+    -   Zero **has meaning**, it represents absence of the quantity
 :::
 
 # Summarizing Data
 
 ## Frequency Distribution
 
->Statistics is really good at summarizing grotesque amounts of information
+> Statistics is really good at summarizing grotesque amounts of information
 
-::: incremental 
+::: incremental
+-   Of the $748$ tsunamis that have occurred since 1970, when do they usually occur?
 
-- Of the $748$ tsunamis that have occurred since 1970, when do they usually occur?
+-   We can look at the months, since exact date is a little impractical
 
-- We can look at the months, since exact date is a little impractical
-
-- Instead of a table of raw data, we can just record each time a specific month appears
-
+-   Instead of a table of raw data, we can just record each time a specific month appears
 :::
 
 ## Frequency Distribution
@@ -441,7 +391,6 @@ $$
 -   "How **frequently** do these variables occur in my sample?"
 
 ::: {style="font-size: 0.8em;"}
-
 $$
 \begin{array}{|c|c|c|c|c|c|c|}
 \hline
@@ -455,14 +404,11 @@ $$
 \hline
 \end{array}
 $$
-
 :::
-
 
 ## Relative Frequency
 
-::: {.small}
-
+::: small
 **Relative frequency distribution**
 
 -   Divide the frequency by the total observations
@@ -470,11 +416,9 @@ $$
 -   This gives us the **proportion** of units in each category
 
 -   "What **percentage** of my sample is this category?"
-
 :::
 
 ::: {style="font-size: 0.8em;"}
-
 $$
 \begin{array}{|c|c|c|c|c|c|c|}
 \hline
@@ -492,23 +436,20 @@ $$
 \hline
 \end{array}
 $$
-
 :::
 
-## Numeric Frequency 
+## Numeric Frequency
 
 ::: incremental
+-   We can do the same thing with numeric values
 
-- We can do the same thing with numeric values
+-   If we wanted to group the tsunamis caused by earthquakes by magnitude of earthquake
 
-- If we wanted to group the tsunamis caused by earthquakes by magnitude of earthquake
+-   We'd need to define some kind of classification for earthquake magnitude
 
-- We'd need to define some kind of classification for earthquake magnitude
+-   Then we could sort them by that
 
-- Then we could sort them by that 
-
-- Let's say: $0.0-0.9$, $1.0-1.9$, ...
-
+-   Let's say: $0.0-0.9$, $1.0-1.9$, ...
 :::
 
 ## Numeric Frequency
@@ -518,7 +459,6 @@ $$
 <br>
 
 ::: {style="font-size: 0.6em;"}
-
 $$
 \begin{array}{|c|c|c|c|c|c|c|}
 \hline
@@ -530,15 +470,12 @@ $$
 \hline
 \end{array}
 $$
-
 :::
 
 ::: incremental
+-   Same table, same general process, same interpretation
 
-- Same table, same general process, same interpretation
-
-- Class definitions are arbitrary but try to make them *make sense*
-
+-   Class definitions are arbitrary but try to make them *make sense*
 :::
 
 # Visualizing Data
@@ -592,7 +529,6 @@ ggplot(data=tab_lev, aes(x="", y=Freq, fill=Var1)) +
 ## Histograms
 
 ::: {style="font-size: 0.6em;"}
-
 $$
 \begin{array}{|c|c|c|c|c|c|c|}
 \hline
@@ -604,9 +540,7 @@ $$
 \hline
 \end{array}
 $$
-
 :::
-
 
 ```{r,echo=FALSE,warning=FALSE,message=FALSE, fig.align='center'}
 hist(tsunami$magnitude,breaks=6,xlim=c(4,10),col="#C1E2CC90",xlab="Magnitude",main="Earthquakes associated with tsunamis")

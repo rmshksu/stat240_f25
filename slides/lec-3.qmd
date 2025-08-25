@@ -15,6 +15,11 @@ execute:
   freeze: auto
 ---
 
+# Math Review
+
+## Rules
+
+```{=html}
 <script type="text/x-mathjax-config">
 MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
   MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
@@ -25,6 +30,7 @@ MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
   });
 });
 </script>
+```
 
 ```{r message=FALSE, warning=FALSE, include=FALSE}
 water=read.csv("data/AGW011.csv")
@@ -40,50 +46,30 @@ water_l4=subset(tmp_water,tmp_water$Location=="4-6 Mor")
 water1=subset(water_l1,water_l1$Recyear>1995 & water_l1$RECTYPE<1998)
 ```
 
-# Math Review
-
-## Rules
-
 ::: incremental
-
-1. **Commutative rule**
-   - Order doesn’t matter  
-
-<span style="display:block; height:0.5em;"></span>
-
-2. **Associative rule**
-   - Order still doesn’t matter  
-
-<span style="display:block; height:0.5em;"></span>
-
-3. **Distributive rule**
-   - Order matters sometimes
-
+1.  **Commutative rule**
+    -   Order doesn’t matter
+2.  **Associative rule**
+    -   Order still doesn’t matter
+3.  **Distributive rule**
+    -   Order matters sometimes
 :::
 
 ## Commutative Rule
 
->When two terms are added$^1$, order does not matter
+> When two terms are added$^1$, order does not matter
 
 $$(a + b) = (b + a)$$
 
-<span style="display:block; height:0.5em;"></span>
-
->When two terms are multiplied$^2$, order does not matter
+> When two terms are multiplied$^2$, order does not matter
 
 $$(a \times b) = (b \times a)$$
 
-<span style="display:block; height:0.5em;"></span>
-
-
-:::{.small}
-
+::: small
 $^1$ subtraction is just negative addition
 
 $^2$ division is just fraction multiplication
-
 :::
-
 
 ## Quick note
 
@@ -117,22 +103,19 @@ a/b=  a\times 1/b \\
 \end{aligned}
 $$
 
-
 ## Associative Rule
 
->When $\ge 3$ terms are added, order does not matter
+> When $\ge 3$ terms are added, order does not matter
 
 $$a+(b+c)=(a+b)+c $$
 
-<span style="display:block; height:0.5em;"></span>
-
->When $\ge 3$ terms are multiplied, order does not matter
+> When $\ge 3$ terms are multiplied, order does not matter
 
 $$a \times (b \times c) = (a \times b) \times c$$
 
 ## Distributive Rule
 
->When a term is multiplied over the addition of two terms, the result is an output equal to the sum of their individual products with the first term
+> When a term is multiplied over the addition of two terms, the result is an output equal to the sum of their individual products with the first term
 
 $$
 \begin{aligned}
@@ -147,21 +130,13 @@ $$
 ## PEMDAS
 
 ::: incremental
+1.  Parentheses
 
-1. Parentheses
+2.  Exponents
 
-<span style="display:block; height:0.5em;"></span>
+3.  Multiplication and Division
 
-2. Exponents
-
-<span style="display:block; height:0.5em;"></span>
-
-3. Multiplication and Division
-
-<span style="display:block; height:0.5em;"></span>
-
-4. Addition and Subtraction
-
+4.  Addition and Subtraction
 :::
 
 ## Basic Exponent Properties
@@ -216,8 +191,6 @@ $$
 \end{array}
 $$
 
-
-
 ## Some Definitions
 
 $$
@@ -243,8 +216,6 @@ $$
 2.5=x\\
 \end{aligned}
 $$
-
-<span style="display:block; height:0.5em;"></span>
 
 $$
 \begin{aligned}
@@ -283,33 +254,23 @@ $$
 ## Summation
 
 ::: incremental
+-   Statisticians are mathematicians
 
-- Statisticians are mathematicians
+-   Mathematicians like to generalize and simplify
 
-<span style="display:block; height:0.3em;"></span>
+    -   Because we're very lazy
 
-- Mathematicians like to generalize and simplify
+-   Add all of the whole numbers from $1$ to $10$ together
 
-    - Because we're very lazy
-    
-<span style="display:block; height:0.3em;"></span>
+-   $1+2+3+4+5+6+7+8+9+10=55$
 
-- Add all of the whole numbers from $1$ to $10$ together
-
-- $1+2+3+4+5+6+7+8+9+10=55$
-
-<span style="display:block; height:0.3em;"></span>
-
-- Inconvenient to write and say
-
+-   Inconvenient to write and say
 :::
 
 ## Summation
 
-:::{.small}
-
+::: small
 Consider a single "variable", $x_i$, where $x_1=1, x_2=2, ... , x_{10}=10$
-
 :::
 
 $$
@@ -321,59 +282,47 @@ $$
 $$
 
 ::: incremental
-
-- Convenient to write and say
-
+-   Convenient to write and say
 :::
 
 ## Notes/Warnings
 
-::: {.small}
-
+:::: small
 ::: incremental
+-   "In the rabbit hole"
 
-- "In the rabbit hole"
+    -   I'll eventually slip up with vocabulary
 
-    - I'll eventually slip up with vocabulary
-    
-<span style="display:block; height:0.3em;"></span>
-    
-- If I say "vector" I mean a line of numbers (column/row in Excel/Google Sheets)
+-   If I say "vector" I mean a line of numbers (column/row in Excel/Google Sheets)
 
-- If I say "matrix" I mean a box of numbers (a table)
+-   If I say "matrix" I mean a box of numbers (a table)
 
-- If I use any term related to calculus, it's not necessary knowledge, it's an aside
+-   If I use any term related to calculus, it's not necessary knowledge, it's an aside
 
-<span style="display:block; height:0.3em;"></span>
+-   If you're confused by a vocab term, raise your hand
 
-- If you're confused by a vocab term, raise your hand
+    -   $50/50$ I'm just going crazy
 
-    - $50/50$ I'm just going crazy
-
-    - $100\%$ chance you aren't alone
-
+    -   $100\%$ chance you aren't alone
 :::
-
-:::
+::::
 
 # Measures of Center
 
 ## Motivation
 
 ::: incremental
+-   The brick they use to build everything in this town
 
-- The brick they use to build everything in this town
+    -   It's in my water
 
-    - It's in my water
+-   "Ogden Limestone"
 
-- "Ogden Limestone"
-    
-- Kansas doesn't want random stuff in the water
+-   Kansas doesn't want random stuff in the water
 
-- Potassium is a good indicator for this limestone
+-   Potassium is a good indicator for this limestone
 
-- How can we determine if the problem is getting worse?
-
+-   How can we determine if the problem is getting worse?
 :::
 
 ## Motivation
@@ -389,19 +338,16 @@ $$\bar x = \frac{1}{n}\sum_{i=1}^nx_i$$
 $$\mu = \frac{1}{N}\sum_{i=1}^n x_i$$
 
 ::: incremental
+-   "Average"
 
-- "Average"
+-   Most common measure of center
 
-- Most common measure of center
-
-- Take all the values in the data, add them up, divide by the number of data points
-
+-   Take all the values in the data, add them up, divide by the number of data points
 :::
 
 ## Mean
 
-:::{.small}
-
+::: small
 $$
 \begin{array}{|c|c|c|c|c|}
 \hline
@@ -421,7 +367,6 @@ $$
 & \bar x = 1.45\\
 \end{aligned}
 $$
-
 :::
 
 ## Resistance
@@ -435,8 +380,6 @@ $$
 $$
 
 $$\bar x = \frac{1}{6}(7.25+6.52)=2.295$$
-
-<span style="display:block; height:0.5em;"></span>
 
 $$
 \begin{array}{|c|c|c|c|c|c|}
@@ -467,17 +410,15 @@ $$
 $$
 
 ::: incremental
+-   The simplest measure of center
 
-- The simplest measure of center
+-   "True" center or middle value
 
-- "True" center or middle value
+-   Organize data from *lowest* to *highest* value
 
-- Organize data from *lowest* to *highest* value
+    -   If $n$ is odd: Choose position ${(n+1)\over2}$ in the ordered data set
 
-    - If $n$ is odd: Choose position ${(n+1)\over2}$ in the ordered data set
-
-    - If $n$ is even: Pick $n\over 2$ and ${n \over 2}+1$ and average the two data points
-
+    -   If $n$ is even: Pick $n\over 2$ and ${n \over 2}+1$ and average the two data points
 :::
 
 ## Derivation
@@ -489,11 +430,6 @@ $$
 \hline
 \end{array}
 $$
-
-
-
-<span style="display:block; height:0.5em;"></span>
-
 
 $$
 \frac{5+1}{2}=\frac{6}{2}=3
@@ -509,16 +445,9 @@ $$
 \end{array}
 $$
 
-
-
-<span style="display:block; height:0.5em;"></span>
-
-
 $$
 \frac{5+1}{2}=\frac{6}{2}=3
 $$
-
-<span style="display:block; height:0.5em;"></span>
 
 $$\text{Median} = 1.4$$
 
@@ -532,9 +461,6 @@ $$
 \end{array}
 $$
 
-
-<span style="display:block; height:0.5em;"></span>
-
 $$\frac{6}{2}=3 \quad \& \quad \frac{6}{2}+1=4$$
 
 ## Derivation
@@ -547,12 +473,7 @@ $$
 \end{array}
 $$
 
-
-<span style="display:block; height:0.5em;"></span>
-
 $$\frac{6}{2}=3 \quad \& \quad \frac{6}{2}+1=4$$
-
-<span style="display:block; height:0.5em;"></span>
 
 $$\text{Median}=\frac{1.4+1.45}{2}=1.425$$
 
@@ -670,8 +591,6 @@ $$
 \end{array}
 $$
 
-<span style="display:block; height:0.5em;"></span>
-
 $$\text{Median}=\frac{1.4+1.45}{2}=1.425$$
 
 ## Skewness
@@ -757,17 +676,15 @@ $$
 $$
 
 ::: incremental
+-   Most frequent observation
 
-- Most frequent observation
+-   Resistant
 
-- Resistant
+-   Not always very informative
 
-- Not always very informative
+-   Easy to skew in a few cases
 
-- Easy to skew in a few cases
-
-- Imagine a homogeneous data set
-
+-   Imagine a homogeneous data set
 :::
 
 ## Mode
@@ -775,4 +692,91 @@ $$
 ```{r,echo=FALSE,warning=FALSE,message=FALSE, fig.align='center'}
 set.seed(73)
 hist(runif(100000,1,5),xlab="",main="",col="#D4D2C6")
+```
+
+# Measures of Spread
+
+## Spread
+
+How can we look at everything going on *between* the data?
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE, fig.align='center'}
+hist(as.numeric(water1$K1),col="#92BBBD90",xlab="Potassium (mg/L)",main="Watershed Potassium Levels (1996-1997)")
+abline(v=mean(as.numeric(water1$K1)),col="#87755C",lwd=3,lty=2)
+abline(v=median(as.numeric(water1$K1)),col="#445B30",lwd=3,lty=2)
+abline(v=1.075,col="#1E3618",lwd=3,lty=2)
+legend("topright", 
+  legend = c("Mean","Median","Mode"), 
+  col = c("#87755C","#445B30","#1E3618"),
+  lty=1,lwd=3,
+  cex = 1.2, 
+  text.col = "black", 
+  horiz = F , 
+  inset = c(0.1, 0.1))
+```
+
+## Range
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE, fig.align='center'}
+hist(as.numeric(water1$K1),col="#92BBBD90",xlab="Potassium (mg/L)",main="Watershed Potassium Levels (1996-1997)")
+```
+
+## Range
+
+Difference between the largest and smallest data value
+
+$$\text{Range} = \text{Maximum} - \text{Minimum}$$
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE, fig.align='center'}
+hist(as.numeric(water1$K1),col="#92BBBD90",xlab="Potassium (mg/L)",main="Watershed Potassium Levels (1996-1997)")
+arrows(1.01,8,1.01,4.5,lwd=2,col="red4")
+arrows(1.38,8,1.38,2.5,lwd=2,col="red4")
+```
+
+## Range
+
+$$\text{Range} = 1.40 - 1.01 = 0.39$$
+
+$$
+\begin{array}{|c|c|c|}
+\hline
+\text{Mean} & \text{Median} & \text{Range} \\
+\hline
+1.17 & 1.12 & 0.39 \\
+\hline
+\end{array}
+$$
+
+::: incremental
+-   Decent context to the data
+
+-   Reduces reliance on graphics
+:::
+
+## Range
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE, fig.align='center'}
+hist(as.numeric(water1$K1),col="#92BBBD90",xlab="Potassium (mg/L)",main="Watershed Potassium Levels (1996-1997)")
+abline(v=mean(as.numeric(water1$K1)),col="#87755C",lwd=3,lty=2)
+abline(v=median(as.numeric(water1$K1)),col="#445B30",lwd=3,lty=2)
+legend("topright", 
+  legend = c("Mean", "Median"), 
+  col = c("#87755C","#445B30"),
+  lty=1,lwd=3,
+  cex = 1.2, 
+  text.col = "black", 
+  horiz = F , 
+  inset = c(0.1, 0.1))
+```
+
+## Range
+
+```{r, echo=FALSE, fig.align='center', message=FALSE, warning=FALSE}
+set.seed(1)
+dat1=round(rnorm(100,0,1))
+dat2=c(rep(1,50),rep(10,50))
+
+par(mar=c(1,1,1,1),mfrow=c(1,2))
+hist(dat1,breaks=20,xaxt="n",yaxt="n",xlab="",ylab="",main="",col="#4B9CA290")
+hist(dat2,xaxt="n",yaxt="n",xlab="",ylab="",main="",col="#225F0290")
 ```

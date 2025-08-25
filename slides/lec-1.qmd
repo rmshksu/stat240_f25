@@ -4,7 +4,7 @@ subtitle: "STAT 240 - Fall 2025"
 author: "Robert Sholl"
 footer:  "[github.io/stat240_f25](https://rmshksu.github.io/stat240_f25/)"
 logo: "images/logo.jpg"
-# embed-resources: true
+embed-resources: true
 format: 
   revealjs: 
     theme: slides.scss
@@ -262,6 +262,28 @@ By the end of this course, students will have a basic grasp of:
   - Start doing it in 4 weeks
   
 :::
+
+## Academic Resources
+
+::::: columns
+::: {.column width="30%"}
+![](images/lec-1/aac-website.png){fig-alt="QR code for AAC" fig-align="center" width="300"}
+
+<div style="text-align: center;">
+  <strong>Academic Achievement Center</strong>
+</div>
+
+:::
+
+::: {.column width="70%"}
+-   Hale Library
+-   Drop-in or appointment tutoring
+-   Student peers with classroom experience
+-   All subjects (including writing)
+-   Learning is not without pain
+    - Pain shouldn't be the focus
+:::
+:::::
 
 ## Grading 
 
