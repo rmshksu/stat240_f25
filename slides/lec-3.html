@@ -751,14 +751,141 @@ x_i, \ y_j &amp; \text{Indexed data} \\
 </section>
 <section id="range-3" class="slide level2">
 <h2>Range</h2>
+<ul>
+<li>Same general information as the graphic</li>
+</ul>
 
 <img data-src="lec-3_files/figure-revealjs/unnamed-chunk-13-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="range-4" class="slide level2">
 <h2>Range</h2>
+<ul>
+<li>“How can we break this?”</li>
+</ul>
+
+<img data-src="lec-3_files/figure-revealjs/unnamed-chunk-14-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="spread-1" class="slide level2">
+<h2>Spread</h2>
+<ul>
+<li>How can we describe the degree with which B is <em>clustered</em>?</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="lec-3_files/figure-revealjs/unnamed-chunk-15-1.png" class="quarto-figure quarto-figure-center" style="width:80.0%;height:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="variance" class="slide level2">
+<h2>Variance</h2>
+<ul>
+<li>Start with the mean</li>
+</ul>
+
+<img data-src="lec-3_files/figure-revealjs/unnamed-chunk-16-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="variance-1" class="slide level2">
+<h2>Variance</h2>
+<ul>
+<li>“Center” the data around the mean</li>
+</ul>
+
+<img data-src="lec-3_files/figure-revealjs/unnamed-chunk-17-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="variance-2" class="slide level2">
+<h2>Variance</h2>
+<ul>
+<li>What happens if we add all of these values?</li>
+</ul>
+
+<img data-src="lec-3_files/figure-revealjs/unnamed-chunk-18-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="variance-3" class="slide level2">
+<h2>Variance</h2>
+<ul>
+<li>Absolute values are nice and intuitive</li>
+</ul>
+
+<img data-src="lec-3_files/figure-revealjs/unnamed-chunk-19-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="absolute-values" class="slide level2">
+<h2>Absolute Values</h2>
+<p><span class="math display">\[
+|x|=\begin{cases}
+x, &amp; x\ge 0 \\
+-x, &amp; x \lt 0
+\end{cases}
+\]</span></p>
+<ul>
+<li><p>Absolute values are nasty in practice</p></li>
+<li><p>Nastier with matrix algebra/calculus</p></li>
+</ul>
+</section>
+<section id="variance-4" class="slide level2">
+<h2>Variance</h2>
+<ul>
+<li>Squaring is easier to do</li>
+</ul>
+
+<img data-src="lec-3_files/figure-revealjs/unnamed-chunk-20-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="variance-5" class="slide level2">
+<h2>Variance</h2>
+<ul>
+<li>Population</li>
+</ul>
+<p><span class="math display">\[\sigma^2=\frac{1}{N}\sum_{i=1}^n(x_i-\mu)^2\]</span></p>
+<ul>
+<li>Sample</li>
+</ul>
+<p><span class="math display">\[s^2=\frac{1}{n-1}\sum_{i=1}^n(x_i-\bar x)^2\]</span></p>
+</section>
+<section id="variance-6" class="slide level2">
+<h2>Variance</h2>
+<p><span class="math display">\[
+\begin{array}{|c|c|c|c|c|}
+\hline
+1.92 &amp; 1.4 &amp; 1.45 &amp; 1.25 &amp; 1.23 \\
+\hline
+\end{array}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\bar x = &amp; \ 1.45\\
+s^2=&amp; \ \frac{1}{5}\left((1.92-1.45)^2+(1.4-1.45)^2+(1.45-1.45)^2+(1.25-1.45)^2+(1.23-1.45)^2\right)\\
+s^2 = &amp; \ \frac{1}{5}\left((0.47)^2+(-0.05)^2+(0)^2+(-0.2)^2+(0.22)^2 \right)\\
+s^2= &amp; \ \frac{1}{5} \left( 0.2209+0.0025 + 0 + 0.04 + 0.0484\right)\\
+s^2 = &amp; \ \frac{1}{5}(0.3318) = 0.06236
+\end{aligned}
+\]</span></p>
+</section>
+<section id="variance-7" class="slide level2">
+<h2>Variance</h2>
+<ul>
+<li>There’s a problem here:</li>
+</ul>
+$$
+<span class="math display">\[\begin{aligned}
+\bar x = &amp; \ 1.45 \text{ mg/L}\\
+s^2=&amp; \ \frac{1}{5}\left((1.92 \text{ mg/L}-1.45 \text{ mg/L})^2+(1.4 \text{ mg/L}-1.45 \text{ mg/L})^2\\
+
++ (1.45\text{ mg/L}-1.45\text{ mg/L})^2+(1.25\text{ mg/L}-1.45\text{ mg/L})^2\\
++(1.23\text{ mg/L}-1.45\text{ mg/L})^2\right)\\
+s^2 = &amp; \ \frac{1}{5}\left((0.47\text{ mg/L})^2+(-0.05\text{ mg/L})^2+(0\text{ mg/L})^2+(-0.2\text{ mg/L})^2+(0.22\text{ mg/L})^2 \right)\\
+s^2= &amp; \ \frac{1}{5} \left( 0.2209 \text{ mg}^2/\text{L}^2+0.0025 \text{ mg}^2/\text{L}^2 + 0 \text{ mg}^2/\text{L}^2 + 0.04 \text{ mg}^2/\text{L}^2 + 0.0484 \text{ mg}^2/\text{L}^2\right)\\
+s^2 = &amp; \ \frac{1}{5}(0.3318 \text{ mg}^2/\text{L}^2) = 0.06236 \text{ mg}^2/\text{L}^2
+\end{aligned}\]</span>
+<p>$$</p>
+</section>
+<section id="standard-deviation" class="slide level2">
+<h2>Standard Deviation</h2>
+<p><span class="math display">\[\sigma = \sqrt{\sigma^2}\]</span></p>
+<p><span class="math display">\[s = \sqrt{s^2}\]</span></p>
+<p><span class="math display">\[s=\sqrt{0.06236 \text{ mg}^2/\text{L}^2} = 0.2497198 \text{ mg/L}\]</span></p>
+<ul>
+<li><p>Fundamentally achieves the same thing as absolute difference</p></li>
+<li><p>Analytically simpler</p></li>
+</ul>
 
 
-
-<img data-src="lec-3_files/figure-revealjs/unnamed-chunk-14-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section></section>
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="images/logo.jpg" class="slide-logo"></p>

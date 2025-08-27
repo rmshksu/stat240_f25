@@ -755,6 +755,8 @@ $$
 
 ## Range
 
+- Same general information as the graphic
+
 ```{r,echo=FALSE,warning=FALSE,message=FALSE, fig.align='center'}
 hist(as.numeric(water1$K1),col="#92BBBD90",xlab="Potassium (mg/L)",main="Watershed Potassium Levels (1996-1997)")
 abline(v=mean(as.numeric(water1$K1)),col="#87755C",lwd=3,lty=2)
@@ -771,6 +773,8 @@ legend("topright",
 
 ## Range
 
+- "How can we break this?"
+
 ```{r, echo=FALSE, fig.align='center', message=FALSE, warning=FALSE}
 set.seed(1)
 dat1=round(rnorm(100,0,1))
@@ -780,3 +784,140 @@ par(mar=c(1,1,1,1),mfrow=c(1,2))
 hist(dat1,breaks=20,xaxt="n",yaxt="n",xlab="",ylab="",main="",col="#4B9CA290")
 hist(dat2,xaxt="n",yaxt="n",xlab="",ylab="",main="",col="#225F0290")
 ```
+
+## Spread
+
+- How can we describe the degree with which B is *clustered*?
+
+```{r, echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width="80%",out.height="80%"}
+set.seed(10)
+A=rnorm(10,3.1,0.8)
+B=rnorm(10,3.1,0.3)
+par(mfrow=c(1,2))
+hist(A,breaks=4,xlim=c(1,5),ylim=c(0,5),col="#c6dc9390",xlab="Aboveground Biomass (g/plant)",main="Clover Species A")
+abline(v=mean(A),col="#63a91f",lwd=4,lty=2)
+hist(B,breaks=4,xlim=c(1,5),col="#c6dc9390",xlab="Aboveground Biomass (g/plant)",main="Clover Species B")
+abline(v=mean(B),col="#63a91f",lwd=4,lty=2)
+```
+
+## Variance
+
+- Start with the mean
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE, fig.align='center'}
+hist(as.numeric(water1$K1),col="#92BBBD90",xlab="Potassium (mg/L)",main="Watershed Potassium Levels (1996-1997)")
+abline(v=mean(as.numeric(water1$K1)),col="#87755C",lwd=3,lty=2)
+```
+
+## Variance
+
+- "Center" the data around the mean
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE, fig.align='center'}
+k_new=as.numeric(water1$K1)-mean(as.numeric(water1$K1))
+hist(k_new,col="#92BBBD90",xlab="Potassium (mg/L)",main="Watershed Potassium Levels (1996-1997)")
+abline(v=mean(k_new),col="#87755C",lwd=3,lty=2)
+```
+
+## Variance
+
+- What happens if we add all of these values?
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE, fig.align='center'}
+k_new=as.numeric(water1$K1)-mean(as.numeric(water1$K1))
+hist(k_new,col="#92BBBD90",xlab="Potassium (mg/L)",main="Watershed Potassium Levels (1996-1997)")
+abline(v=mean(k_new),col="#87755C",lwd=3,lty=2)
+```
+
+
+## Variance
+
+- Absolute values are nice and intuitive
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE, fig.align='center'}
+k_new=as.numeric(water1$K1)-mean(as.numeric(water1$K1))
+hist(abs(k_new),col="#92BBBD90",xlab="Potassium (mg/L)",main="Watershed Potassium Levels (1996-1997)")
+abline(v=mean(abs(k_new)),col="#87755C",lwd=3,lty=2)
+```
+
+## Absolute Values
+
+$$
+|x|=\begin{cases}
+x, & x\ge 0 \\
+-x, & x \lt 0
+\end{cases}
+$$
+
+- Absolute values are nasty in practice
+
+- Nastier with matrix algebra/calculus
+
+## Variance
+
+- Squaring is easier to do
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE, fig.align='center'}
+k_new=as.numeric(water1$K1)-mean(as.numeric(water1$K1))
+hist(k_new^2,col="#92BBBD90",xlab="Potassium (mg/L)",main="Watershed Potassium Levels (1996-1997)")
+abline(v=mean(k_new^2),col="#87755C",lwd=3,lty=2)
+```
+
+## Variance
+
+- Population
+
+$$\sigma^2=\frac{1}{N}\sum_{i=1}^n(x_i-\mu)^2$$
+
+- Sample
+
+$$s^2=\frac{1}{n-1}\sum_{i=1}^n(x_i-\bar x)^2$$
+
+## Variance
+
+$$
+\begin{array}{|c|c|c|c|c|}
+\hline
+1.92 & 1.4 & 1.45 & 1.25 & 1.23 \\
+\hline
+\end{array}
+$$
+
+$$
+\begin{aligned}
+\bar x = & \ 1.45\\
+s^2=& \ \frac{1}{5}\left((1.92-1.45)^2+(1.4-1.45)^2+(1.45-1.45)^2+(1.25-1.45)^2+(1.23-1.45)^2\right)\\
+s^2 = & \ \frac{1}{5}\left((0.47)^2+(-0.05)^2+(0)^2+(-0.2)^2+(0.22)^2 \right)\\
+s^2= & \ \frac{1}{5} \left( 0.2209+0.0025 + 0 + 0.04 + 0.0484\right)\\
+s^2 = & \ \frac{1}{5}(0.3318) = 0.06236
+\end{aligned}
+$$
+
+## Variance
+
+- There's a problem here:
+
+$$
+\begin{aligned}
+\bar x = & \ 1.45 \text{ mg/L}\\
+s^2=& \ \frac{1}{5}\left((1.92 \text{ mg/L}-1.45 \text{ mg/L})^2+(1.4 \text{ mg/L}-1.45 \text{ mg/L})^2\\
+
++ (1.45\text{ mg/L}-1.45\text{ mg/L})^2+(1.25\text{ mg/L}-1.45\text{ mg/L})^2\\
++(1.23\text{ mg/L}-1.45\text{ mg/L})^2\right)\\
+s^2 = & \ \frac{1}{5}\left((0.47\text{ mg/L})^2+(-0.05\text{ mg/L})^2+(0\text{ mg/L})^2+(-0.2\text{ mg/L})^2+(0.22\text{ mg/L})^2 \right)\\
+s^2= & \ \frac{1}{5} \left( 0.2209 \text{ mg}^2/\text{L}^2+0.0025 \text{ mg}^2/\text{L}^2 + 0 \text{ mg}^2/\text{L}^2 + 0.04 \text{ mg}^2/\text{L}^2 + 0.0484 \text{ mg}^2/\text{L}^2\right)\\
+s^2 = & \ \frac{1}{5}(0.3318 \text{ mg}^2/\text{L}^2) = 0.06236 \text{ mg}^2/\text{L}^2
+\end{aligned}
+$$
+
+## Standard Deviation
+
+$$\sigma = \sqrt{\sigma^2}$$
+
+$$s = \sqrt{s^2}$$
+
+$$s=\sqrt{0.06236 \text{ mg}^2/\text{L}^2} = 0.2497198 \text{ mg/L}$$
+
+- Fundamentally achieves the same thing as absolute difference
+
+- Analytically simpler
