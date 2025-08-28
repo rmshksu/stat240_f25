@@ -2145,14 +2145,21 @@
     "href": "slides/lec-3.html#variance-6",
     "title": "Summary Statistics",
     "section": "Variance",
-    "text": "Variance\n\\[\n\\begin{array}{|c|c|c|c|c|}\n\\hline\n1.92 & 1.4 & 1.45 & 1.25 & 1.23 \\\\\n\\hline\n\\end{array}\n\\]\n\\[\n\\begin{aligned}\n\\bar x = & \\ 1.45\\\\\ns^2=& \\ \\frac{1}{5}\\left((1.92-1.45)^2+(1.4-1.45)^2+(1.45-1.45)^2+(1.25-1.45)^2+(1.23-1.45)^2\\right)\\\\\ns^2 = & \\ \\frac{1}{5}\\left((0.47)^2+(-0.05)^2+(0)^2+(-0.2)^2+(0.22)^2 \\right)\\\\\ns^2= & \\ \\frac{1}{5} \\left( 0.2209+0.0025 + 0 + 0.04 + 0.0484\\right)\\\\\ns^2 = & \\ \\frac{1}{5}(0.3318) = 0.06236\n\\end{aligned}\n\\]"
+    "text": "Variance\n\\[\n\\begin{array}{|c|c|c|c|c|}\n\\hline\n1.92 & 1.4 & 1.45 & 1.25 & 1.23 \\\\\n\\hline\n\\end{array}\n\\]"
   },
   {
     "objectID": "slides/lec-3.html#variance-7",
     "href": "slides/lec-3.html#variance-7",
     "title": "Summary Statistics",
     "section": "Variance",
-    "text": "Variance\n\nThere’s a problem here:\n\n$$\n\\[\\begin{aligned}\n\\bar x = & \\ 1.45 \\text{ mg/L}\\\\\ns^2=& \\ \\frac{1}{5}\\left((1.92 \\text{ mg/L}-1.45 \\text{ mg/L})^2+(1.4 \\text{ mg/L}-1.45 \\text{ mg/L})^2\\\\\n\n+ (1.45\\text{ mg/L}-1.45\\text{ mg/L})^2+(1.25\\text{ mg/L}-1.45\\text{ mg/L})^2\\\\\n+(1.23\\text{ mg/L}-1.45\\text{ mg/L})^2\\right)\\\\\ns^2 = & \\ \\frac{1}{5}\\left((0.47\\text{ mg/L})^2+(-0.05\\text{ mg/L})^2+(0\\text{ mg/L})^2+(-0.2\\text{ mg/L})^2+(0.22\\text{ mg/L})^2 \\right)\\\\\ns^2= & \\ \\frac{1}{5} \\left( 0.2209 \\text{ mg}^2/\\text{L}^2+0.0025 \\text{ mg}^2/\\text{L}^2 + 0 \\text{ mg}^2/\\text{L}^2 + 0.04 \\text{ mg}^2/\\text{L}^2 + 0.0484 \\text{ mg}^2/\\text{L}^2\\right)\\\\\ns^2 = & \\ \\frac{1}{5}(0.3318 \\text{ mg}^2/\\text{L}^2) = 0.06236 \\text{ mg}^2/\\text{L}^2\n\\end{aligned}\\]\n$$"
+    "text": "Variance\n\\[\n\\begin{aligned}\n\\bar x = & \\ 1.45\\\\\ns^2=& \\ \\frac{1}{5}\\left((1.92-1.45)^2+(1.4-1.45)^2+(1.45-1.45)^2+\\\\\n(1.25-1.45)^2+(1.23-1.45)^2\\right)\\\\\ns^2 = & \\ \\frac{1}{5}\\left((0.47)^2+(-0.05)^2+(0)^2+(-0.2)^2+(0.22)^2 \\right)\\\\\ns^2= & \\ \\frac{1}{5} \\left( 0.2209+0.0025 + 0 + 0.04 + 0.0484\\right)\\\\\ns^2 = & \\ \\frac{1}{5}(0.3318) = 0.06236\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/lec-3.html#variance-8",
+    "href": "slides/lec-3.html#variance-8",
+    "title": "Summary Statistics",
+    "section": "Variance",
+    "text": "Variance\n\\[\n\\begin{aligned}\n\\bar x = \\ 1.45 \\text{ mg/L}\\\\\n\\end{aligned}\n\\]\n\\[\n\\begin{aligned}\ns^2= \\ \\frac{1}{5}\\left((1.92 \\text{ mg/L}-1.45 \\text{ mg/L})^2+(1.4 \\text{ mg/L}-1.45 \\text{ mg/L})^2\\\\\n+(1.45\\text{ mg/L}-1.45\\text{ mg/L})^2+(1.25\\text{ mg/L}-1.45\\text{ mg/L})^2\\\\\n+(1.23\\text{ mg/L}-1.45\\text{ mg/L})^2\\right)\\\\\n\\end{aligned}\n\\]\n\\[\n\\begin{aligned}\ns^2 = \\ \\frac{1}{5}(0.3318 \\text{ mg}^2/\\text{L}^2) = 0.06236 \\text{ mg}^2/\\text{L}^2\n\\end{aligned}\n\\]"
   },
   {
     "objectID": "slides/lec-3.html#standard-deviation",
